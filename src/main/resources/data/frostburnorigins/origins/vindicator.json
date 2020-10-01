@@ -1,0 +1,12 @@
+{
+    "name": "Vindicator",
+    "description": "Not much above the common Illager. Having honed their skill in axe combat in secret with Piglin Brutes, these Illagers can carve up a mean Thanksgiving meal!",
+    "icon": "minecraft:iron_axe",
+    "impact": 1,
+    "order": 1,
+    "powers": [
+        "frostburnorigins:thermophobic",
+        "frostburnorigins:axe_crazy"
+    ],
+    "unchooseable": false
+}

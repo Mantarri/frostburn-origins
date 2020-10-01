@@ -1,0 +1,11 @@
+{
+    "name": "Iron Golem",
+    "description": "Now recognizable as the Villagers protector, this mighty Golem strikes fear in the heart of any ill-wishing Illager.",
+    "icon": "minecraft:iron_block",
+    "impact": 1,
+    "order": 1,
+    "powers": [
+        "frostburnorigins:wrought_iron"
+    ],
+    "unchoosable": false
+}

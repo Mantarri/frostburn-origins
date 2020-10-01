@@ -1,0 +1,11 @@
+{
+    "name": "Snow Golem",
+    "description": "Frozen creatures with incredible aim, and cold to the touch.",
+    "icon": "minecraft:snowball",
+    "impact": 1,
+    "order": 3,
+    "powers": [
+        "frostburnorigins:thermophobic",
+        "frostburnorigins:frostbite"
+    ]
+}

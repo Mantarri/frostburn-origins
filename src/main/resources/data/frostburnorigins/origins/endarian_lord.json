@@ -1,0 +1,11 @@
+{
+    "name": "Endarian Lord",
+    "description": "Having defeated the previous Lord of The End, this Endarian is now nigh invincible.",
+    "icon": "minecraft:ender_eye",
+    "impact": 1,
+    "order": 1,
+    "powers": [
+        "frostburnorigins:thermophobic"
+    ],
+    "unchoosable": false
+}

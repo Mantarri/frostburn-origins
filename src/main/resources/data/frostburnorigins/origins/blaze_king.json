@@ -1,0 +1,13 @@
+{
+    "name": "Blazing King",
+    "description": "Often liked to being the King of Blaze-kind, this Blaze is not a mob you want as a foe.",
+    "icon": "minecraft:blaze_powder",
+    "impact": 1,
+    "order": 0,
+    "powers": [
+        "origins:nether_spawn",
+        "origins:fire_immunity",
+        "frostburnorigins:flaming_body",
+        "frostburnorigins:kings_shield"
+    ]
+}

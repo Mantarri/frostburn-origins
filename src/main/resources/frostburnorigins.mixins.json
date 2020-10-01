@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "misteryman.frostburnorigins.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "EvokerEntityMixin",
+    "HungerManagerMixin",
+    "ItemAccessorMixin",
+    "ItemMixin",
+    "ItemsMixin",
+    "ItemStackMixin",
+    "LivingEntityMixin",
+    "PillagerEntityMixin",
+    "PlayerEntityMixin",
+    "VindicatorEntityMixin",
+    "goal.VindicatorFollowEntityGoalMixin"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "frostburnorigins",
+  "version": "${version}",
+
+  "name": "Frostburn Origins",
+  "description": "Add-on for Origins that contains the origins for the Frostburn modpack",
+  "authors": [
+    "Mistery Man"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "MIT",
+  "icon": "assets/frostburnorigins/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "misteryman.frostburnorigins.common.FrostburnOrigins"
+    ],
+
+    "client": [
+      "misteryman.frostburnorigins.client.FrostburnOriginsClient"
+    ],
+
+    "modmenu": [
+      "misteryman.frostburnorigins.config.ConfigModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "frostburnorigins.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x",
+    "origins": ">=1.16-0.3.7"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}

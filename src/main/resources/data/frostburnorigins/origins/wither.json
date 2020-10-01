@@ -1,0 +1,12 @@
+{
+    "name": "Wither",
+    "description": "The result of a Withered consuming an Ender Star, this creature is nigh invincible, though they seem to be gentle giants, not forced to fight to survive any longer.",
+    "icon": "minecraft:nether_star",
+    "impact": 1,
+    "order": 0,
+    "powers": [
+        "frostburnorigins:thermophobic",
+        "frostburnorigins:withered_stomach"
+    ],
+    "unchooseable": false
+}

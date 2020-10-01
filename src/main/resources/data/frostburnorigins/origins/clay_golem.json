@@ -1,0 +1,10 @@
+{
+    "name": "Clay Golem",
+    "description": "Descended from the automatons of the Villagers, this small Golem has no need for food, nor any care for poison. Though it's clay exterior is vulnerable to pickaxes.",
+    "icon": "minecraft:clay_ball",
+    "impact": 1,
+    "order": 1,
+    "powers": [
+        "frostburnorigins:crackable"
+    ]
+}

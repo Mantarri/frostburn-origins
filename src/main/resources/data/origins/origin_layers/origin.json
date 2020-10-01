@@ -1,0 +1,28 @@
+{
+	"replace": false,
+	"origins": [
+        "frostburnorigins:inferno",
+        "frostburnorigins:phoenix",
+        "frostburnorigins:blaze_king",
+        "frostburnorigins:pigling",
+        "frostburnorigins:withered_pigling",
+        "frostburnorigins:pigling_brute",
+        "frostburnorigins:witherling",
+        "frostburnorigins:withered",
+        "frostburnorigins:wither",
+        "frostburnorigins:snow_golem",
+        "frostburnorigins:aurora",
+        "frostburnorigins:borealis",
+        "frostburnorigins:stray",
+        "frostburnorigins:vindicator",
+        "frostburnorigins:pillager",
+        "frostburnorigins:evoker",
+        "frostburnorigins:endarian",
+        "frostburnorigins:endarian_lord",
+        "frostburnorigins:clay_golem",
+        "frostburnorigins:sand_golem",
+        "frostburnorigins:glass_golem",
+        "frostburnorigins:iron_golem",
+        "frostburnorigins:steel_golem"
+	]
+}

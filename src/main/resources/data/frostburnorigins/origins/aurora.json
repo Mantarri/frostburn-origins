@@ -1,0 +1,11 @@
+{
+    "name": "Aurora",
+    "description": "A Snow Golem that has mastered both fire, and ice. It can live through the dawn of the sun, unlike its Borealis brethren.",
+    "icon": "minecraft:sunflower",
+    "impact": 1,
+    "order": 1,
+    "powers": [
+        "frostburnorigins:thermophobic"
+    ],
+    "unchooseable": false
+}

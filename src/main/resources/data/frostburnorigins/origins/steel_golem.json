@@ -1,0 +1,9 @@
+{
+    "name": "Steel Golem",
+    "description": "Even stronger than the mighty Iron Golem, this entity is hard as steel, and faster than its previous Iron Golem form.",
+    "icon": "minecraft:iron_ingot",
+    "impact": 1,
+    "order": 1,
+    "powers": [],
+    "unchoosable": false
+}
