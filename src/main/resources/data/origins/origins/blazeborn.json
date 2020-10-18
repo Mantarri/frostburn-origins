@@ -1,0 +1,8 @@
+{
+    "icon": "minecraft:blaze_powder",
+    "impact": 0,
+    "order": 0,
+    "powers": [],
+    "loading_priority": 1,
+    "unchoosable" : true
+}

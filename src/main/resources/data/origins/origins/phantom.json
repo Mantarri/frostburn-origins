@@ -1,0 +1,8 @@
+{
+    "icon": "minecraft:phantom_membrane",
+    "impact": 0,
+    "order": 0,
+    "powers": [],
+    "loading_priority": 1,
+    "unchoosable" : true
+}
