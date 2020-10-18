@@ -6,6 +6,7 @@
     "order": 3,
     "powers": [
         "frostburnorigins:thermophobic",
-        "frostburnorigins:frostbite"
+        "frostburnorigins:frostbite",
+        "frostburnorigins:frozen_heart"
     ]
 }

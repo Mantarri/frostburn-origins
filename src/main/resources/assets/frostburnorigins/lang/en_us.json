@@ -1,28 +1,41 @@
 {
   "power.frostburnorigins.flaming_body.name": "Flaming Body",
   "power.frostburnorigins.flaming_body.description": "Your body is so hot that you set fire to any mob you touch.",
+  "power.frostburnorigins.blazeborn.name": "Blazeborn",
+  "power.frostburnorigins.blazeborn.description": "Fellow Blazings do not attack you.",
+  "power.frostburnorigins.phoenix.name": "Phoenix",
+  "power.frostburnorigins.phoenix.description": "Resist death due to your fiery spirit.",
+  "power.frostburnorigins.fall_flying.name": "Refractive Wings",
+  "power.frostburnorigins.fall_flying.description": "You can utilize the heat ofw your body to slice through the air, achieving flight.",
+  "power.frostburnorigins.kings_shield.name": "King's Shield",
+  "power.frostburnorigins.kings_shield.description": "Create a shield around yourself, temporarily forged from your own burning limbs.",
+
   "power.frostburnorigins.thermophobic.name": "Thermophobic",
   "power.frostburnorigins.thermophobic.description": "You cannot consume hot food, such as magma cream, or blaze rods.",
+  "power.frostburnorigins.endless_quiver.name": "Endless Quiver",
+  "power.frostburnorigins.endless_quiver.description": "You store a quiver that has an endless amount of arrows.",
+
   "power.frostburnorigins.frostbite.name": "Frostbite",
   "power.frostburnorigins.frostbite.description": "Attacking an entity deals Slowness for 4 seconds.",
   "power.frostburnorigins.hypothermicbite.name": "Hypothermicbite",
   "power.frostburnorigins.hypothermicbite.description": "Attacking an entity deals Slowness II for 8 seconds.",
-  "power.frostburnorigins.phoenix.name": "Phoenix",
-  "power.frostburnorigins.phoenix.description": "Resist death due to your fiery spirit.",
-  "power.frostburnorigins.fall_flying.name": "Refractive Wings",
-  "power.frostburnorigins.fall_flying.description": "You can utilize the heat of your body to slice through the air, achieving flight.",
+  "power.frostburnorigins.frozen_heart.name": "Frozen Heart",
+  "power.frostburnorigins.frozen_heart.description": "Members of the Frost Faction are neutral towards you.",
+
   "power.frostburnorigins.withered_stomach.name": "Withered Stomach",
   "power.frostburnorigins.withered_stomach.description": "You get more value from rotting food, and are immune to hunger, wither, and poison effects.",
+
+  "power.frostburnorigins.brethren.name": "Brethren",
+  "power.frostburnorigins.brethren.description": "Members of the Illagers do not attack you.",
   "power.frostburnorigins.axe_crazy.name": "Axe Crazy",
   "power.frostburnorigins.axe_crazy.description": "Deal 2x damage with an axe.",
   "power.frostburnorigins.crossbow_master.name": "Crossbow Master",
   "power.frostburnorigins.crossbow_master.description": "Deal 2x damage with a crossbow.",
   "power.frostburnorigins.fang_caller.name": "Fang Caller",
   "power.frostburnorigins.fang_caller.description": "Summon fangs",
+
   "power.frostburnorigins.wrought_iron.name": "Wrought Iron",
-  "power.frostburnorigins.wrought_iron.description": "Your body is hard as iron, giving you 10 extra HP.",
+  "power.frostburnorigins.wrought_iron.description": "Your body is hard as iron, giving you 5 extra Hearts.",
   "power.frostburnorigins.crackable.name": "Crackable",
-  "power.frostburnorigins.crackable.description": "Take 2x from pickaxes",
-  "power.frostburnorigins.kings_shield.name": "King's Shield",
-  "power.frostburnorigins.kings_shield.description": "Create a shield around yourself, temporarily forged from your own burning limbs."
+  "power.frostburnorigins.crackable.description": "Take 2x from pickaxes"
 }

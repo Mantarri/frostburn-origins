@@ -6,7 +6,8 @@
     "order": 1,
     "powers": [
         "frostburnorigins:thermophobic",
-        "frostburnorigins:axe_crazy"
+        "frostburnorigins:axe_crazy",
+        "frostburnorigins:brethren"
     ],
     "unchooseable": false
 }

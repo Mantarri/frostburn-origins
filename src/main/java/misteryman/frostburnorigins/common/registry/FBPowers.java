@@ -20,11 +20,13 @@ import net.minecraft.util.registry.Registry;
 
 public class FBPowers {
     public static final PowerType<Power> FLAMING_BODY;
-    public static final PowerType<Power> PHOENIX;
+    public static final PowerType<CooldownPower> PHOENIX;
     public static final PowerType<Power> KINGS_SHIELD;
+    public static final PowerType<Power> BLAZEBORN;
 
     public static final PowerType<Power> FROSTBITE;
-    public static final PowerType<Power> HYPOTHERMICBITE;
+    public static final PowerType<Power> FROZEN_QUIVER;
+    public static final PowerType<Power> FROZEN_HEART;
 
     public static final PowerType<Power> THERMOPHOBIC;
 
@@ -34,19 +36,21 @@ public class FBPowers {
 
     public static final PowerType<Power> AXE_CRAZY;
     public static final PowerType<Power> CROSSBOW_MASTER;
-    public static final PowerType<Power> ILLAGER;
+    public static final PowerType<Power> BRETHREN;
 
     public static final PowerType<Power> CRACKABLE;
     public static final PowerType<AttributePower> WROUGHT_IRON;
 
-    public static final PowerType<ActiveCooldownPower> FANG_CALLER;
+    public static final PowerType<CooldownPower> FANG_CALLER;
 
     static {
         FLAMING_BODY = register("flaming_body", new PowerType<>(Power::new));
-        PHOENIX = register("phoenix", new PowerType<>(Power::new));
+        PHOENIX = register("phoenix", new PowerType<>((type, player) -> new CooldownPower(type, player, 20 * 300, 2)));
+        BLAZEBORN = register("blazeborn", new PowerType<>(Power::new));
 
         FROSTBITE = register("frostbite", new PowerType<>(Power::new));
-        HYPOTHERMICBITE = register("hypothermicbite", new PowerType<>(Power::new));
+        FROZEN_QUIVER = register("frozen_quiver", new PowerType<>(Power::new));
+        FROZEN_HEART = register("frozen_heart", new PowerType<>(Power::new));
 
         THERMOPHOBIC = register("thermophobic", new PowerType<>((type, player) -> new PreventItemUsePower(type, player, (stack -> stack.isFood() && stack.getItem().isIn(ModTags.CONSUMABLE_FIRE)))));
 
@@ -56,12 +60,12 @@ public class FBPowers {
 
         AXE_CRAZY = register("axe_crazy", new PowerType<>(Power::new));
         CROSSBOW_MASTER = register("crossbow_master", new PowerType<>(Power::new));
-        ILLAGER = register("illager", new PowerType<>(Power::new));
+        BRETHREN = register("brethren", new PowerType<>(Power::new));
 
         CRACKABLE = register("crackable", new PowerType<>(Power::new));
         WROUGHT_IRON = register("wrought_iron", new PowerType<>((type, player) -> new AttributePower(type, player, EntityAttributes.GENERIC_MAX_HEALTH, new EntityAttributeModifier("power_type:wrought_iron", +10, EntityAttributeModifier.Operation.ADDITION))));
 
-        FANG_CALLER = register("fang_caller", new PowerType<>((type, player) -> new ActiveCooldownPower(type, player, 20 * 10, 6, p -> {
+        FANG_CALLER = register("fang_caller", new PowerType<>((type, player) -> new ActiveCooldownPower(type, player, 20 * 10, 4, p -> {
             p.world.playSound(null, p.getX(), p.getY(), p.getZ(), SoundEvents.ENTITY_PLAYER_ATTACK_STRONG, SoundCategory.NEUTRAL, 0.75F, 1.0F / (p.getRandom().nextFloat() * 0.4F + 0.8F));
 
             if(!p.world.isClient) {
@@ -82,7 +86,7 @@ public class FBPowers {
             }
         })));
 
-        KINGS_SHIELD = register("kings_shield", new PowerType<>((type, player) -> new ActiveCooldownPower(type, player, 20 * 2, 6, p -> {
+        KINGS_SHIELD = register("kings_shield", new PowerType<>((type, player) -> new ActiveCooldownPower(type, player, 20 * 2, 2, p -> {
             ItemFrameEntity itemFrame = new ItemFrameEntity(p.world, new BlockPos(p.getX(), p.getY(), p.getZ()), Direction.UP);
             p.world.spawnEntity(itemFrame);
         })));

@@ -4,6 +4,8 @@
   "package": "misteryman.frostburnorigins.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "AbstractSkeletonEntityMixin",
+    "BlazeEntityMixin",
     "EvokerEntityMixin",
     "HungerManagerMixin",
     "ItemAccessorMixin",
@@ -11,10 +13,10 @@
     "ItemsMixin",
     "ItemStackMixin",
     "LivingEntityMixin",
+    "PiglinBruteBrainMixin",
     "PillagerEntityMixin",
     "PlayerEntityMixin",
-    "VindicatorEntityMixin",
-    "goal.VindicatorFollowEntityGoalMixin"
+    "VindicatorEntityMixin"
   ],
   "client": [],
   "injectors": {

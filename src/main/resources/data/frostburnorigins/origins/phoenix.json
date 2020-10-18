@@ -6,6 +6,7 @@
     "order": 0,
     "powers": [
         "origins:fire_immunity",
+        "frostburnorigins:blazeborn",
         "frostburnorigins:fall_flying",
         "frostburnorigins:phoenix"
     ],

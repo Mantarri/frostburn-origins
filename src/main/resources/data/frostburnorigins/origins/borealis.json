@@ -5,7 +5,8 @@
     "impact": 1,
     "order": 1,
     "powers": [
-        "frostburnorigins:thermophobic"
+        "frostburnorigins:thermophobic",
+        "frostburnorigins:frozen_heart"
     ],
     "unchoosable": false
 }
