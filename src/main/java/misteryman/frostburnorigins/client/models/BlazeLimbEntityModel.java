@@ -14,7 +14,7 @@ public class BlazeLimbEntityModel extends EntityModel<BlazeLimbEntity> {
         this.textureWidth = 16;
 
         base = new ModelPart(this, 0, 0);
-        base.addCuboid(-6F, -6F, -6F, 12F, 12F, 12F);
+        base.addCuboid(-6, -6, -6, 12, 12, 12);
     }
 
     @Override
