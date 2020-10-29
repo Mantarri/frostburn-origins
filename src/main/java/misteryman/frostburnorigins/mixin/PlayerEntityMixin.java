@@ -1,5 +1,9 @@
 package misteryman.frostburnorigins.mixin;
 
+import io.github.apace100.origins.power.Power;
+import io.github.apace100.origins.power.PowerType;
+import io.github.apace100.origins.power.PowerTypeReference;
+import misteryman.frostburnorigins.common.FrostburnOrigins;
 import misteryman.frostburnorigins.common.registry.FBPowers;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -10,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionUtil;
+import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -21,15 +26,15 @@ import java.util.List;
 
 @Mixin(PlayerEntity.class)
 public abstract class PlayerEntityMixin {
-
+    // Flaming Body
     @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;onAttacking(Lnet/minecraft/entity/Entity;)V"), method = "attack")
-    public void modifyOnAttacking(Entity target, CallbackInfo info) {
+    public void modifyOnAttackdfding(Entity target, CallbackInfo info) {
         if(target instanceof LivingEntity) {
-            if(FBPowers.FLAMING_BODY.isActive(((PlayerEntity) (Object) this))) {
+            if(FBPowers.FLAMING_BODY.isActive(((Entity) (Object) this))) {
                 target.setOnFireFor(4);
             }
 
-            if(FBPowers.FLAMING_BODY.isActive(((PlayerEntity) (Object) this))) {
+            if(FBPowers.FLAMING_BODY.isActive(((Entity) (Object) this))) {
                 target.setOnFireFor(4);
             }
         }

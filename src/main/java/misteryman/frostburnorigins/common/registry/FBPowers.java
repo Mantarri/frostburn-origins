@@ -1,38 +1,47 @@
 package misteryman.frostburnorigins.common.registry;
 
+import com.google.gson.*;
+import io.github.apace100.origins.Origins;
 import io.github.apace100.origins.power.*;
+import io.github.apace100.origins.power.factory.PowerFactory;
 import io.github.apace100.origins.registry.ModRegistries;
+import io.github.apace100.origins.util.MultiJsonDataLoader;
 import misteryman.frostburnorigins.common.FrostburnOrigins;
 import misteryman.frostburnorigins.common.ModTags;
 import misteryman.frostburnorigins.power.FangCallerPower;
+import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.decoration.ItemFrameEntity;
 import net.minecraft.entity.mob.EvokerFangsEntity;
+import net.minecraft.resource.ResourceManager;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.JsonHelper;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.profiler.Profiler;
 import net.minecraft.util.registry.Registry;
 
-public class FBPowers {
-    public static final PowerType<Power> FLAMING_BODY;
-    public static final PowerType<CooldownPower> PHOENIX;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
+public class FBPowers extends MultiJsonDataLoader implements IdentifiableResourceReloadListener {
     public static final PowerType<Power> KINGS_SHIELD;
-    public static final PowerType<Power> BLAZEBORN;
+    public static final PowerType<Power> FLAMING_BODY;
+
+    public static final PowerType<Power> WITHERING_VENOM;
 
     public static final PowerType<Power> FROSTBITE;
     public static final PowerType<Power> FROZEN_QUIVER;
     public static final PowerType<Power> FROZEN_HEART;
 
     public static final PowerType<Power> THERMOPHOBIC;
-
-    public static final PowerType<Power> FALL_FLYING;
-
-    public static final PowerType<Power> WITHERED_STOMACH;
 
     public static final PowerType<Power> AXE_CRAZY;
     public static final PowerType<Power> CROSSBOW_MASTER;
@@ -44,19 +53,15 @@ public class FBPowers {
     public static final PowerType<CooldownPower> FANG_CALLER;
 
     static {
-        FLAMING_BODY = register("flaming_body", new PowerType<>(Power::new));
-        PHOENIX = register("phoenix", new PowerType<>((type, player) -> new CooldownPower(type, player, 20 * 300, 2)));
-        BLAZEBORN = register("blazeborn", new PowerType<>(Power::new));
+        FLAMING_BODY = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "flaming_body"));
+
+        WITHERING_VENOM = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "wither_venom"));
 
         FROSTBITE = register("frostbite", new PowerType<>(Power::new));
         FROZEN_QUIVER = register("frozen_quiver", new PowerType<>(Power::new));
         FROZEN_HEART = register("frozen_heart", new PowerType<>(Power::new));
 
         THERMOPHOBIC = register("thermophobic", new PowerType<>((type, player) -> new PreventItemUsePower(type, player, (stack -> stack.isFood() && stack.getItem().isIn(ModTags.CONSUMABLE_FIRE)))));
-
-        FALL_FLYING = register("fall_flying", new PowerType<>(Power::new));
-
-        WITHERED_STOMACH = register("withered_stomach", new PowerType<>(Power::new));
 
         AXE_CRAZY = register("axe_crazy", new PowerType<>(Power::new));
         CROSSBOW_MASTER = register("crossbow_master", new PowerType<>(Power::new));
@@ -92,11 +97,62 @@ public class FBPowers {
         })));
     }
 
-    public static void init() {
+    private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().disableHtmlEscaping().create();
 
+    private HashMap<Identifier, Integer> loadingPriorities = new HashMap<>();
+
+    public PowerTypes() {
+        super(GSON, "powers");
+    }
+
+    @Override
+    protected void apply(Map<Identifier, List<JsonElement>> loader, ResourceManager manager, Profiler profiler) {
+        PowerTypeRegistry.reset();
+        loadingPriorities.clear();
+        loader.forEach((id, jel) -> {
+            jel.forEach(je -> {
+                try {
+                    JsonObject jo = je.getAsJsonObject();
+                    Identifier factoryId = Identifier.tryParse(JsonHelper.getString(jo, "type"));
+                    Optional<PowerFactory> optionalFactory = ModRegistries.POWER_FACTORY.getOrEmpty(factoryId);
+                    if(!optionalFactory.isPresent()) {
+                        throw new JsonSyntaxException("Power type \"" + factoryId.toString() + "\" is not defined.");
+                    }
+                    PowerFactory.Instance factoryInstance = optionalFactory.get().read(jo);
+                    PowerType type = new PowerType(id, factoryInstance);
+                    int priority = JsonHelper.getInt(jo, "loading_priority", 0);
+                    String name = JsonHelper.getString(jo, "name", "");
+                    String description = JsonHelper.getString(jo, "description", "");
+                    boolean hidden = JsonHelper.getBoolean(jo, "hidden", false);
+                    if(hidden) {
+                        type.setHidden();
+                    }
+                    type.setTranslationKeys(name, description);
+                    if(!PowerTypeRegistry.contains(id)) {
+                        PowerTypeRegistry.register(id, type);
+                        loadingPriorities.put(id, priority);
+                    } else {
+                        if(loadingPriorities.get(id) < priority) {
+                            PowerTypeRegistry.register(id, type);
+                            loadingPriorities.put(id, priority);
+                        }
+                    }
+                } catch(Exception e) {
+                    Origins.LOGGER.error("There was a problem reading power file " + id.toString() + " (skipping): " + e.getMessage());
+                }
+            });
+        });
+        loadingPriorities.clear();
+        Origins.LOGGER.info("Finished loading powers from data files. Registry contains " + PowerTypeRegistry.size() + " powers.");
+    }
+
+    @Override
+    public Identifier getFabricId() {
+        return new Identifier(Origins.MODID, "powers");
     }
 
     private static <T extends Power> PowerType<T> register(String path, PowerType<T> type) {
-        return Registry.register(ModRegistries.POWER_TYPE, new Identifier(FrostburnOrigins.MODID, path), type);
+        return new PowerTypeReference<>(new Identifier(Origins.MODID, path));
+        //return PowerTypeRegistry.register(new Identifier(Origins.MODID, path), type);
     }
 }

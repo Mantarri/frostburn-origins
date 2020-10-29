@@ -1,5 +1,6 @@
 package misteryman.frostburnorigins.common;
 
+import io.github.apace100.origins.Origins;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.Toml4jConfigSerializer;
 import misteryman.frostburnorigins.common.registry.FBPowers;
@@ -16,10 +17,14 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class FrostburnOrigins implements ModInitializer {
+    public static final Logger LOGGER = LogManager.getLogger(FrostburnOrigins.class);
     public static final String MODID = "frostburnorigins";
     public static boolean configRegistered = false;
+
     public static final EntityType<BlazeLimbEntity> BLAZE_LIMB = Registry.register(
             Registry.ENTITY_TYPE,
             new Identifier("frostburnorigins", "blaze_limb"),
@@ -41,7 +46,6 @@ public class FrostburnOrigins implements ModInitializer {
         FabricDefaultAttributeRegistry.register(BLAZE_KING, BlazeKingEntity.createMobAttributes());
 
         ModTags.register();
-        FBPowers.init();
         FallFlyingLib.registerAccessor((le) -> new FallFlyingPower(le));
 
     }
