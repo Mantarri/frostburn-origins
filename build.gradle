@@ -23,6 +23,9 @@ repositories {
 	maven {
 		url 'https://jitpack.io'
 	}
+	maven {
+		url "https://maven.jamieswhiteshirt.com/libs-release/"
+	}
 }
 
 dependencies {
