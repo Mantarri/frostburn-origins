@@ -7,8 +7,6 @@ import misteryman.frostburnorigins.common.registry.FBPowers;
 import misteryman.frostburnorigins.config.ModConfig;
 import misteryman.frostburnorigins.entity.BlazeKingEntity;
 import misteryman.frostburnorigins.entity.BlazeLimbEntity;
-import misteryman.frostburnorigins.power.FallFlyingPower;
-import net.adriantodt.fallflyinglib.FallFlyingLib;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
@@ -46,7 +44,6 @@ public class FrostburnOrigins implements ModInitializer {
         FabricDefaultAttributeRegistry.register(BLAZE_KING, BlazeKingEntity.createMobAttributes());
 
         ModTags.register();
-        FallFlyingLib.registerAccessor((le) -> new FallFlyingPower(le));
 
     }
 }

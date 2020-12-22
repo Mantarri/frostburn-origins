@@ -1,12 +1,10 @@
 {
-    "name": "Borealis",
-    "description": "Wind and Snow incarnate. It can use the temperature and volatility of its body to create a storm around it that can slow even the hottest mobs.",
-    "icon": "minecraft:blue_ice",
-    "impact": 1,
-    "order": 1,
     "powers": [
         "frostburnorigins:thermophobic",
         "frostburnorigins:frozen_heart"
     ],
-    "unchoosable": false
+    "unchoosable": false,
+    "icon": "minecraft:blue_ice",
+    "order": 1,
+    "impact": 1
 }

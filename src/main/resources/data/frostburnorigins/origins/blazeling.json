@@ -1,13 +1,11 @@
 {
-    "name": "Blazeling",
-    "description": "The lesser form. Though it lacks the flight of its elders, it still blazes with the fire of the Nether.",
-    "icon": "minecraft:blaze_powder",
-    "impact": 1,
-    "order": 0,
     "powers": [
         "origins:nether_spawn",
         "origins:fire_immunity",
         "frostburnorigins:blazeborn",
         "frostburnorigins:flaming_body"
-    ]
+    ],
+    "icon": "minecraft:blaze_powder",
+    "order": 0,
+    "impact": 1
 }

@@ -1,8 +1,6 @@
 {
-    "name": "Glass Golem",
-    "description": "Having hardened itself, this former Sand Golem is fragile, but can also unleash great power.",
+    "powers": [],
     "icon": "minecraft:glass",
     "impact": 1,
-    "order": 1,
-    "powers": []
+    "order": 1
 }

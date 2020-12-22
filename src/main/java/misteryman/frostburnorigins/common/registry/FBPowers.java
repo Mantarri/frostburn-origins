@@ -41,14 +41,11 @@ public class FBPowers extends MultiJsonDataLoader implements IdentifiableResourc
     public static final PowerType<Power> FROZEN_QUIVER;
     public static final PowerType<Power> FROZEN_HEART;
 
-    public static final PowerType<Power> THERMOPHOBIC;
-
     public static final PowerType<Power> AXE_CRAZY;
     public static final PowerType<Power> CROSSBOW_MASTER;
     public static final PowerType<Power> BRETHREN;
 
     public static final PowerType<Power> CRACKABLE;
-    public static final PowerType<AttributePower> WROUGHT_IRON;
 
     public static final PowerType<CooldownPower> FANG_CALLER;
 
@@ -57,18 +54,15 @@ public class FBPowers extends MultiJsonDataLoader implements IdentifiableResourc
 
         WITHERING_VENOM = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "wither_venom"));
 
-        FROSTBITE = register("frostbite", new PowerType<>(Power::new));
-        FROZEN_QUIVER = register("frozen_quiver", new PowerType<>(Power::new));
-        FROZEN_HEART = register("frozen_heart", new PowerType<>(Power::new));
+        FROSTBITE = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "frostbite"));
+        FROZEN_QUIVER = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "frozen_quiver"));
+        FROZEN_HEART = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "frozen_heart"));
 
-        THERMOPHOBIC = register("thermophobic", new PowerType<>((type, player) -> new PreventItemUsePower(type, player, (stack -> stack.isFood() && stack.getItem().isIn(ModTags.CONSUMABLE_FIRE)))));
+        AXE_CRAZY = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "axe_crazy"));
+        CROSSBOW_MASTER = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "crossbow_master"));
+        BRETHREN = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "brethren"));
 
-        AXE_CRAZY = register("axe_crazy", new PowerType<>(Power::new));
-        CROSSBOW_MASTER = register("crossbow_master", new PowerType<>(Power::new));
-        BRETHREN = register("brethren", new PowerType<>(Power::new));
-
-        CRACKABLE = register("crackable", new PowerType<>(Power::new));
-        WROUGHT_IRON = register("wrought_iron", new PowerType<>((type, player) -> new AttributePower(type, player, EntityAttributes.GENERIC_MAX_HEALTH, new EntityAttributeModifier("power_type:wrought_iron", +10, EntityAttributeModifier.Operation.ADDITION))));
+        CRACKABLE = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "crackable"));
 
         FANG_CALLER = register("fang_caller", new PowerType<>((type, player) -> new ActiveCooldownPower(type, player, 20 * 10, 4, p -> {
             p.world.playSound(null, p.getX(), p.getY(), p.getZ(), SoundEvents.ENTITY_PLAYER_ATTACK_STRONG, SoundCategory.NEUTRAL, 0.75F, 1.0F / (p.getRandom().nextFloat() * 0.4F + 0.8F));
@@ -103,6 +97,10 @@ public class FBPowers extends MultiJsonDataLoader implements IdentifiableResourc
 
     public PowerTypes() {
         super(GSON, "powers");
+    }
+
+    public FBPowers(Gson gson, String dataType) {
+        super(gson, dataType);
     }
 
     @Override

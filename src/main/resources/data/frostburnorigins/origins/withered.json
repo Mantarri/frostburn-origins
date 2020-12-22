@@ -1,12 +1,10 @@
 {
-    "name": "Withered",
-    "description": "Having eaten enough food to feed a small bastion, this Witherling has become more than a mere bottom-feeder.",
-    "icon": "minecraft:stone_sword",
-    "impact": 1,
-    "order": 0,
     "powers": [
         "frostburnorigins:thermophobic",
         "frostburnorigins:withered_stomach"
     ],
-    "unchooseable": false
+    "unchooseable": false,
+    "icon": "minecraft:stone_sword",
+    "order": 0,
+    "impact": 1
 }

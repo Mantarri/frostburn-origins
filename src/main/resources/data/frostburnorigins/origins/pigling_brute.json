@@ -1,11 +1,9 @@
 {
-    "name": "Pigling Brute",
-    "description": "Tough as a battering ram, these are the tanks of the Pigling pack, and an expert with their axe.",
-    "icon": "minecraft:golden_axe",
-    "impact": 1,
-    "order": 0,
     "powers": [
         "frostburnorigins:thermophobic"
     ],
-    "unchooseable": false
+    "unchooseable": false,
+    "icon": "minecraft:golden_axe",
+    "order": 0,
+    "impact": 1
 }

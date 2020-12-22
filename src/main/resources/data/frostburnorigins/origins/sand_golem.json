@@ -1,12 +1,10 @@
 {
-    "name": "Sand Golem",
-    "description": "A Golem that can change its shape, able to fit through the very atoms of the world.",
-    "icon": "minecraft:sand",
-    "impact": 1,
-    "order": 1,
     "powers": [
         "origins:phasing",
         "origins:invisibility"
     ],
-    "unchoosable": false
+    "unchoosable": false,
+    "icon": "minecraft:sand",
+    "order": 1,
+    "impact": 1
 }

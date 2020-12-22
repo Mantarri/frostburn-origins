@@ -1,14 +1,12 @@
 {
-    "name": "Phoenix Blaze",
-    "description": "A blaze that has gained incredible ariel manueverability, able to keep all its items upon death.",
-    "icon": "minecraft:blaze_rod",
-    "impact": 1,
-    "order": 0,
     "powers": [
         "origins:fire_immunity",
         "frostburnorigins:blazeborn",
         "frostburnorigins:fall_flying",
         "frostburnorigins:phoenix"
     ],
-    "unchooseable": false
+    "unchooseable": false,
+    "icon": "minecraft:blaze_rod",
+    "order": 0,
+    "impact": 1
 }

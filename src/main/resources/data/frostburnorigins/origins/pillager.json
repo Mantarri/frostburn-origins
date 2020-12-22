@@ -1,13 +1,11 @@
 {
-    "name": "Pillager",
-    "description": "Having decided to make adventurers take an arrow to the knee... and face. This Illager loves the feeling of the wind as it chases its prey... or enemy.",
-    "icon": "minecraft:crossbow",
-    "impact": 1,
-    "order": 1,
     "powers": [
         "frostburnorigins:thermophobic",
         "frostburnorigins:crossbow_master",
         "frostburnorigins:brethren"
     ],
-    "unchoosable": false
+    "unchoosable": false,
+    "icon": "minecraft:crossbow",
+    "order": 1,
+    "impact": 1
 }

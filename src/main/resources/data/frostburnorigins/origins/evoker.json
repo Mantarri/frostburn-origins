@@ -1,13 +1,11 @@
 {
-    "name": "Evoker",
-    "description": "A powerful Illager leader. This Illager has risen through the ranks, now able to shape even the ground into crude spikes, using it to protect their people.",
-    "icon": "minecraft:totem_of_undying",
-    "impact": 1,
-    "order": 1,
     "powers": [
         "frostburnorigins:thermophobic",
         "frostburnorigins:fang_caller",
         "frostburnorigins:brethren"
     ],
-    "unchoosable": false
+    "unchoosable": false,
+    "icon": "minecraft:totem_of_undying",
+    "order": 1,
+    "impact": 1
 }

@@ -1,11 +1,9 @@
 {
-    "name": "Stray",
-    "description": "Having adapted to the cold, these descendants of humans are able to pierce through the constant storm with both eye, and arrow.",
-    "icon": "minecraft:bow",
-    "impact": 1,
-    "order": 1,
     "powers": [
         "frostburnorigins:thermophobic",
         "frostburnorigins:frozen_quiver"
-    ]
+    ],
+    "icon": "minecraft:bow",
+    "order": 1,
+    "impact": 1
 }

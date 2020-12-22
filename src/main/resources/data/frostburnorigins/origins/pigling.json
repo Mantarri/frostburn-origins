@@ -1,11 +1,9 @@
 {
-    "name": "Pigling",
-    "description": "A Warrior species that gathers in groups. The Pigling are like a large, ferocious family. Peacefully trading with each other, and leaping to the defense of their packmates against any perceived threat.",
-    "icon": "minecraft:golden_sword",
-    "impact": 1,
-    "order": 2,
     "powers": [
         "frostburnorigins:thermophobic",
         "origins:nether_spawn"
-    ]
+    ],
+    "icon": "minecraft:golden_sword",
+    "order": 2,
+    "impact": 1
 }

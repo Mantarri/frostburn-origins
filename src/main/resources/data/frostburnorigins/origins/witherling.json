@@ -1,11 +1,9 @@
 {
-    "name": "Witherling",
-    "description": "A hardy creature, it can eat even the most rotten items, which is why it is also known as 'The hunger of the Nether'.",
-    "icon": "minecraft:rotten_flesh",
-    "impact": 1,
-    "order": 1,
     "powers": [
         "frostburnorigins:thermophobic",
         "frostburnorigins:withered_stomach"
-    ]
+    ],
+    "icon": "minecraft:rotten_flesh",
+    "order": 1,
+    "impact": 1
 }

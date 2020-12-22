@@ -1,12 +1,66 @@
 {
+  "origin.frostburnorigins.blazeling.name": "Blazeling",
+  "origin.frostburnorigins.blazeling.description": "The lesser form. Though it lacks the flight of its elders, it still blazes with the fire of the Nether.",
+  "origin.frostburnorigins.phoenix.name": "Phoenix Blaze",
+  "origin.frostburnorigins.phoenix.description": "A blaze that has gained incredible ariel maneuverability, able to avoid death on occasion...",
+  "origin.frostburnorigins.blazing_king.name": "Blazing King",
+  "origin.frostburnorigins.blazing_king.description": "Having defeated a previous King in a duel, this former Inferno has earned the title of \"Nether King\".",
+
+  "origin.frostburnorigins.pigling.name": "Pigling",
+  "origin.frostburnorigins.pigling.description": "A Warrior species that gathers in groups. The Pigling are like a large, ferocious family. Peacefully trading with each other, and leaping to the defense of their packmates against any perceived threat.",
+  "origin.frostburnorigins.pigling_brute.name": "Pigling Brute",
+  "origin.frostburnorigins.pigling_brute.description": "Tough as a battering ram, these are the tanks of the Pigling pack, and an expert with their axe.",
+
+  "origin.frostburnorigins.withered_pigling.name": "Withered Pigling",
+  "origin.frostburnorigins.withered_pigling.description": "A neutral species, the result of a Pigling traveling to the overworld, and consuming rotten flesh.",
+
+  "origin.frostburnorigins.witherling.name": "Witherling",
+  "origin.frostburnorigins.witherling.description": "A hardy creature, it can eat even the most rotten items, which is why it is also known as 'The hunger of the Nether'.",
+  "origin.frostburnorigins.withered.name": "Withered",
+  "origin.frostburnorigins.withered.description": "Having eaten enough food to feed a small bastion, this Witherling has become more than a mere bottom-feeder.",
+  "origin.frostburnorigins.wither.name": "Wither",
+  "origin.frostburnorigins.wither.description": "The result of a Withered consuming an Ender Star, this creature is nigh invincible, though they seem to be gentle giants, not forced to fight to survive any longer.",
+
+  "origin.frostburnorigins.stray.name": "Stray",
+  "origin.frostburnorigins.stray.description": "Having adapted to the cold, these descendants of humans are able to pierce through the constant storm with both eye, and arrow.",
+
+  "origin.frostburnorigins.snow_golem.name": "Snow Golem",
+  "origin.frostburnorigins.snow_golem.description": "Frozen creatures with incredible aim, and cold to the touch.",
+  "origin.frostburnorigins.aurora.name": "Aurora",
+  "origin.frostburnorigins.aurora.description": "A Snow Golem that has mastered both fire, and ice. It can live through the dawn of the sun, unlike its Borealis brethren.",
+  "origin.frostburnorigins.borealis.name": "Borealis",
+  "origin.frostburnorigins.borealis.description": "Wind and Snow incarnate. It can use the temperature and volatility of its body to create a storm around it that can slow even the hottest mobs.",
+
+  "origin.frostburnorigins.clay_golem.name": "Clay Golem",
+  "origin.frostburnorigins.clay_golem.description": "Descended from the automatons of the Villagers, this small Golem has no need for food, nor any care for poison. Though it's clay exterior is vulnerable to pickaxes.",
+  "origin.frostburnorigins.sand_golem.name": "Sand Golem",
+  "origin.frostburnorigins.sand_golem.description": "A Golem that can change its shape, able to fit through the very atoms of the world.",
+  "origin.frostburnorigins.glass_golem.name": "Glass Golem",
+  "origin.frostburnorigins.glass_golem.description": "Having hardened itself, this former Sand Golem is fragile, but can also unleash great power.",
+  "origin.frostburnorigins.iron_golem.name": "Iron Golem",
+  "origin.frostburnorigins.iron_golem.description": "Now recognizable as the Villagers protector, this mighty Golem strikes fear in the heart of any ill-wishing Illager.",
+  "origin.frostburnorigins.steel_golem.name": "Steel Golem",
+  "origin.frostburnorigins.steel_golem.description": "Even stronger than the mighty Iron Golem, this entity is hard as steel, and faster than its previous Iron Golem form.",
+
+  "origin.frostburnorigins.vindicator.name": "Vindicator",
+  "origin.frostburnorigins.vindicator.description": "Not much above the common Illager. Having honed their skill in axe combat in secret with Piglin Brutes, these Illagers can carve up a mean Thanksgiving centerpiece!",
+  "origin.frostburnorigins.pillager.name": "Pillager",
+  "origin.frostburnorigins.pillager.description": "Having decided to make adventurers take an arrow to the knee... and face. This Illager loves the feeling of the wind as it chases its prey... or enemy.",
+  "origin.frostburnorigins.evoker.name": "Evoker",
+  "origin.frostburnorigins.evoker.description": "A powerful Illager leader. This Illager has risen through the ranks, now able to shape even the ground into crude spikes, using it to protect their people.",
+  "origin.frostburnorigins.endarian.name": "Endarian",
+  "origin.frostburnorigins.endarian.description": "Having finally reached the Ender, this Illager has shrugged off its weaker body, embracing the energy of the End.",
+  "origin.frostburnorigins.endarian_lord.name": "Endarian Lord",
+  "origin.frostburnorigins.endarian_lord.description": "Having defeated the previous Lord of The End, this Endarian is now nigh invincible.",
+
   "power.frostburnorigins.flaming_body.name": "Flaming Body",
   "power.frostburnorigins.flaming_body.description": "Your body is so hot that you set fire to any mob you touch.",
   "power.frostburnorigins.blazeborn.name": "Blazeborn",
   "power.frostburnorigins.blazeborn.description": "Fellow Blazings do not attack you.",
   "power.frostburnorigins.phoenix.name": "Phoenix",
   "power.frostburnorigins.phoenix.description": "Resist death due to your fiery spirit.",
-  "power.frostburnorigins.fall_flying.name": "Refractive Wings",
-  "power.frostburnorigins.fall_flying.description": "You can utilize the heat of your body to slice through the air, achieving flight.",
+  "power.frostburnorigins.refractive_wings.name": "Refractive Wings",
+  "power.frostburnorigins.refractive_wings.description": "You can utilize the heat of your body to slice through the air, achieving flight.",
   "power.frostburnorigins.kings_shield.name": "King's Shield",
   "power.frostburnorigins.kings_shield.description": "Create a shield around yourself, temporarily forged from your own burning limbs.",
 
@@ -24,6 +78,8 @@
 
   "power.frostburnorigins.withered_stomach.name": "Withered Stomach",
   "power.frostburnorigins.withered_stomach.description": "You get more value from rotting food, and are immune to hunger, wither, and poison effects.",
+  "power.frostburnorigins.withering_venom.name": "Withering Venom",
+  "power.frostburnorigins.withering_venom.description": "Your stomach converts poisonous foods into a savage venom.",
 
   "power.frostburnorigins.brethren.name": "Brethren",
   "power.frostburnorigins.brethren.description": "Members of the Illagers do not attack you.",
@@ -35,7 +91,7 @@
   "power.frostburnorigins.fang_caller.description": "Summon fangs",
 
   "power.frostburnorigins.wrought_iron.name": "Wrought Iron",
-  "power.frostburnorigins.wrought_iron.description": "Your body is hard as iron, giving you 5 extra Hearts.",
+  "power.frostburnorigins.wrought_iron.description": "Your body is hard as iron, giving you 5 extra hearts.",
   "power.frostburnorigins.crackable.name": "Crackable",
-  "power.frostburnorigins.crackable.description": "Take 2x from pickaxes"
+  "power.frostburnorigins.crackable.description": "Take double damage from pickaxes."
 }

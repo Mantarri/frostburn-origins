@@ -1,12 +1,10 @@
 {
-    "name": "Withered Pigling",
-    "description": "A neutral species, the result of a Pigling traveling to the overworld, and consuming rotten flesh.",
-    "icon": "minecraft:gold_nugget",
-    "impact": 1,
-    "order": 0,
     "powers": [
         "frostburnorigins:thermophobic",
         "frostburnorigins:withered_stomach"
     ],
-    "unchooseable": false
+    "unchooseable": false,
+    "icon": "minecraft:gold_nugget",
+    "order": 0,
+    "impact": 1
 }

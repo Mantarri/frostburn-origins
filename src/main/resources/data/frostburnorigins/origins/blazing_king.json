@@ -1,13 +1,11 @@
 {
-    "name": "Blazing King",
-    "description": "Having defeated a previous King in a duel, this former Inferno has earned the title of \"Nether King\".",
-    "icon": "minecraft:blaze_powder",
-    "impact": 1,
-    "order": 0,
     "powers": [
         "origins:fire_immunity",
         "frostburnorigins:blazeborn",
         "frostburnorigins:flaming_body",
         "frostburnorigins:kings_shield"
-    ]
+    ],
+    "icon": "minecraft:blaze_powder",
+    "order": 0,
+    "impact": 1
 }

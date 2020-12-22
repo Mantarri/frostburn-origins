@@ -1,0 +1,9 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Wrought Iron health increase",
+    "attribute": "minecraft:generic.max_health",
+    "value": 20.0,
+    "operation": "addition"
+  }
+}

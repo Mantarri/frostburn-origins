@@ -1,12 +1,10 @@
 {
-    "name": "Endarian",
-    "description": "Having finally reached the Ender, this Illager has shrugged off its weaker body, embracing the energey of the End.",
-    "icon": "minecraft:ender_pearl",
-    "impact": 1,
-    "order": 1,
     "powers": [
         "frostburnorigins:thermophobic",
         "origins:pumpkin_hate"
     ],
-    "unchoosable": false
+    "unchoosable": false,
+    "icon": "minecraft:ender_pearl",
+    "order": 1,
+    "impact": 1
 }

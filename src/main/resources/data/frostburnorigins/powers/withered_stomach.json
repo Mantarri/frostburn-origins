@@ -2,6 +2,7 @@
   "type": "origins:effect_immunity",
   "effects": [
     "minecraft:poison",
-    "minecraft:hunger"
+    "minecraft:hunger",
+    "minecraft:wither"
   ]
 }
