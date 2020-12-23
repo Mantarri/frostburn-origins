@@ -1,39 +1,33 @@
 package misteryman.frostburnorigins.common.registry;
 
-import com.google.gson.*;
 import io.github.apace100.origins.Origins;
 import io.github.apace100.origins.power.*;
 import io.github.apace100.origins.power.factory.PowerFactory;
 import io.github.apace100.origins.registry.ModRegistries;
-import io.github.apace100.origins.util.MultiJsonDataLoader;
+import io.github.apace100.origins.util.HudRender;
+import io.github.apace100.origins.util.SerializableData;
+import io.github.apace100.origins.util.SerializableDataType;
 import misteryman.frostburnorigins.common.FrostburnOrigins;
-import misteryman.frostburnorigins.common.ModTags;
+import io.github.apace100.origins.power.factory.PowerFactories;
 import misteryman.frostburnorigins.power.FangCallerPower;
-import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
-import net.minecraft.entity.attribute.EntityAttributeModifier;
-import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.decoration.ItemFrameEntity;
 import net.minecraft.entity.mob.EvokerFangsEntity;
-import net.minecraft.resource.ResourceManager;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.JsonHelper;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.profiler.Profiler;
 import net.minecraft.util.registry.Registry;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-
-public class FBPowers extends MultiJsonDataLoader implements IdentifiableResourceReloadListener {
-    public static final PowerType<Power> KINGS_SHIELD;
+public class FBPowers {
+    //public static final PowerType<Power> KINGS_SHIELD;
+    public static final PowerType<Power> BLAZEBORN;
     public static final PowerType<Power> FLAMING_BODY;
+    public static final PowerType<CooldownPower> PHOENIX;
 
     public static final PowerType<Power> WITHERING_VENOM;
 
@@ -47,10 +41,12 @@ public class FBPowers extends MultiJsonDataLoader implements IdentifiableResourc
 
     public static final PowerType<Power> CRACKABLE;
 
-    public static final PowerType<CooldownPower> FANG_CALLER;
+    //public static final PowerType<CooldownPower> EARTHEN_MAW;
 
     static {
+        BLAZEBORN = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "blazeborn"));
         FLAMING_BODY = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "flaming_body"));
+        PHOENIX = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "phoenix"));
 
         WITHERING_VENOM = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "wither_venom"));
 
@@ -64,93 +60,64 @@ public class FBPowers extends MultiJsonDataLoader implements IdentifiableResourc
 
         CRACKABLE = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "crackable"));
 
-        FANG_CALLER = register("fang_caller", new PowerType<>((type, player) -> new ActiveCooldownPower(type, player, 20 * 10, 4, p -> {
-            p.world.playSound(null, p.getX(), p.getY(), p.getZ(), SoundEvents.ENTITY_PLAYER_ATTACK_STRONG, SoundCategory.NEUTRAL, 0.75F, 1.0F / (p.getRandom().nextFloat() * 0.4F + 0.8F));
 
-            if(!p.world.isClient) {
-                Vec3d pLookVec = new Vec3d(MathHelper.sin(-p.yaw * 0.017453292F), 1.0F, MathHelper.cos(-p.yaw * 0.017453292F));
-                Vec3d pPos = new Vec3d(p.getX(), p.getY(), p.getZ());
-                Vec3d fangPos;
-                float headYaw = p.headYaw * (1F / 57.295776F);
-                double y = pPos.y;
 
-                for(int i = 0, j = 2; i < 6; i++, j+= 2) {
-                    fangPos = new Vec3d(pPos.x + (pLookVec.x * j), y, pPos.z + (pLookVec.z * j));
-                    FangCallerPower fangCallerPower = new FangCallerPower();
-                    y = fangCallerPower.getValidHeight(y, p, fangPos);
-                    EvokerFangsEntity fangs = new EvokerFangsEntity(p.world, pPos.x + (pLookVec.x * j), y, pPos.z + (pLookVec.z * j), headYaw, 1, p);
-                    p.world.spawnEntity(fangs);
-                }
+        register(new PowerFactory<>(new Identifier(FrostburnOrigins.MODID, "jaws"),
+                new SerializableData()
+                        .add("cooldown", SerializableDataType.INT)
+                        .add("speed", SerializableDataType.FLOAT)
+                        .add("sound", SerializableDataType.SOUND_EVENT, null)
+                        .add("hud_render", SerializableDataType.HUD_RENDER),
+                data -> {
+                    SoundEvent soundEvent = (SoundEvent)data.get("sound");
+                    return (type, player) -> new ActiveCooldownPower(type, player,
+                            data.getInt("cooldown"),
+                            (HudRender)data.get("hud_render"),
+                            e -> {
+                                if(!e.world.isClient && e instanceof PlayerEntity) {
+                                    PlayerEntity p = (PlayerEntity)e;
+                                    Vec3d pLookVec = new Vec3d(MathHelper.sin(-p.yaw * 0.017453292F), 1.0F, MathHelper.cos(-p.yaw * 0.017453292F));
+                                    Vec3d pPos = new Vec3d(p.getX(), p.getY(), p.getZ());
+                                    Vec3d fangPos;
+                                    float headYaw = p.headYaw * (1F / 57.295776F);
+                                    double y = pPos.y;
 
-            }
-        })));
+                                    for(int i = 0, j = 2; i < 6; i++, j+= 2) {
+                                        fangPos = new Vec3d(pPos.x + (pLookVec.x * j), y, pPos.z + (pLookVec.z * j));
+                                        FangCallerPower fangCallerPower = new FangCallerPower();
+                                        y = fangCallerPower.getValidHeight(y, p, fangPos);
+                                        EvokerFangsEntity fangs = new EvokerFangsEntity(p.world, pPos.x + (pLookVec.x * j), y, pPos.z + (pLookVec.z * j), headYaw, 1, p);
+                                        p.world.spawnEntity(fangs);
+                                    }
+                                }
+                            });
+                }).allowCondition());
 
-        KINGS_SHIELD = register("kings_shield", new PowerType<>((type, player) -> new ActiveCooldownPower(type, player, 20 * 2, 2, p -> {
-            ItemFrameEntity itemFrame = new ItemFrameEntity(p.world, new BlockPos(p.getX(), p.getY(), p.getZ()), Direction.UP);
-            p.world.spawnEntity(itemFrame);
-        })));
+        register(new PowerFactory<>(new Identifier(FrostburnOrigins.MODID, "entity_shield"),
+                new SerializableData()
+                        .add("cooldown", SerializableDataType.INT)
+                        .add("speed", SerializableDataType.FLOAT)
+                        .add("sound", SerializableDataType.SOUND_EVENT, null)
+                        .add("hud_render", SerializableDataType.HUD_RENDER),
+                data -> {
+                    SoundEvent soundEvent = (SoundEvent)data.get("sound");
+                    return (type, player) -> new ActiveCooldownPower(type, player,
+                            data.getInt("cooldown"),
+                            (HudRender)data.get("hud_render"),
+                            e -> {
+                                if(!e.world.isClient && e instanceof PlayerEntity) {
+                                    PlayerEntity p = (PlayerEntity)e;
+                                    ItemFrameEntity itemFrame = new ItemFrameEntity(p.world, new BlockPos(p.getX(), p.getY(), p.getZ()), Direction.UP);
+                                    p.world.spawnEntity(itemFrame);
+                                }
+                            });
+                }).allowCondition());
+    }
+    private static void register(PowerFactory serializer) {
+        Registry.register(ModRegistries.POWER_FACTORY, serializer.getSerializerId(), serializer);
     }
 
-    private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().disableHtmlEscaping().create();
+    public static void init() {
 
-    private HashMap<Identifier, Integer> loadingPriorities = new HashMap<>();
-
-    public PowerTypes() {
-        super(GSON, "powers");
-    }
-
-    public FBPowers(Gson gson, String dataType) {
-        super(gson, dataType);
-    }
-
-    @Override
-    protected void apply(Map<Identifier, List<JsonElement>> loader, ResourceManager manager, Profiler profiler) {
-        PowerTypeRegistry.reset();
-        loadingPriorities.clear();
-        loader.forEach((id, jel) -> {
-            jel.forEach(je -> {
-                try {
-                    JsonObject jo = je.getAsJsonObject();
-                    Identifier factoryId = Identifier.tryParse(JsonHelper.getString(jo, "type"));
-                    Optional<PowerFactory> optionalFactory = ModRegistries.POWER_FACTORY.getOrEmpty(factoryId);
-                    if(!optionalFactory.isPresent()) {
-                        throw new JsonSyntaxException("Power type \"" + factoryId.toString() + "\" is not defined.");
-                    }
-                    PowerFactory.Instance factoryInstance = optionalFactory.get().read(jo);
-                    PowerType type = new PowerType(id, factoryInstance);
-                    int priority = JsonHelper.getInt(jo, "loading_priority", 0);
-                    String name = JsonHelper.getString(jo, "name", "");
-                    String description = JsonHelper.getString(jo, "description", "");
-                    boolean hidden = JsonHelper.getBoolean(jo, "hidden", false);
-                    if(hidden) {
-                        type.setHidden();
-                    }
-                    type.setTranslationKeys(name, description);
-                    if(!PowerTypeRegistry.contains(id)) {
-                        PowerTypeRegistry.register(id, type);
-                        loadingPriorities.put(id, priority);
-                    } else {
-                        if(loadingPriorities.get(id) < priority) {
-                            PowerTypeRegistry.register(id, type);
-                            loadingPriorities.put(id, priority);
-                        }
-                    }
-                } catch(Exception e) {
-                    Origins.LOGGER.error("There was a problem reading power file " + id.toString() + " (skipping): " + e.getMessage());
-                }
-            });
-        });
-        loadingPriorities.clear();
-        Origins.LOGGER.info("Finished loading powers from data files. Registry contains " + PowerTypeRegistry.size() + " powers.");
-    }
-
-    @Override
-    public Identifier getFabricId() {
-        return new Identifier(Origins.MODID, "powers");
-    }
-
-    private static <T extends Power> PowerType<T> register(String path, PowerType<T> type) {
-        return new PowerTypeReference<>(new Identifier(Origins.MODID, path));
-        //return PowerTypeRegistry.register(new Identifier(Origins.MODID, path), type);
     }
 }

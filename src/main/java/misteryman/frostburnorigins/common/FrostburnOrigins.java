@@ -45,5 +45,6 @@ public class FrostburnOrigins implements ModInitializer {
 
         ModTags.register();
 
+        FBPowers.init();
     }
 }

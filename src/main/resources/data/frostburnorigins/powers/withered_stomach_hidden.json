@@ -1,0 +1,31 @@
+{
+  "type": "origins:modify_food",
+  "item_condition": [
+    {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "id": "minecraft:poisonous_potato"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "id": "minecraft:rotten_flesh"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "id": "minecraft:spider_eye"
+          }
+        }
+      ]
+    }
+  ],
+  "food_modifier": {
+
+  }
+}

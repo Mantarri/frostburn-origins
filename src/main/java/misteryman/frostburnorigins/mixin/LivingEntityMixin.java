@@ -108,14 +108,7 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Inject(at = @At("HEAD"), method = "addStatusEffect", cancellable = true)
     public void modifyAddStatusEffect(StatusEffectInstance effect, CallbackInfoReturnable<Boolean> cir) {
-        if(
-                effect.getEffectType().equals(StatusEffects.HUNGER) ||
-                effect.getEffectType().equals(StatusEffects.POISON) ||
-                effect.getEffectType().equals(StatusEffects.WITHER)) {
-            if (FBPowers.WITHERED_STOMACH.isActive(((LivingEntity) (Object) this))) {
-                cir.setReturnValue(false);
-            }
-        }
+
     }
 
 }

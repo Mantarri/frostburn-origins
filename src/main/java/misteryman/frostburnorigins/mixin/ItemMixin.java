@@ -21,13 +21,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class ItemMixin {
     @Inject(at = @At("RETURN"), method = "finishUsing")
     public void modifyUse(ItemStack stack, World world, LivingEntity user, CallbackInfoReturnable<TypedActionResult<ItemStack>> cir) {
-        if(FBPowers.WITHERED_STOMACH.isActive(user)) {
-            if(
-                    Registry.ITEM.getId(((Item) (Object) this)).equals(new Identifier("minecraft:rotten_flesh")) ||
-                    Registry.ITEM.getId(((Item) (Object) this)).equals(new Identifier("minecraft:poisonous_potato"))
-            ) {
-                user.addStatusEffect(new StatusEffectInstance(StatusEffects.SATURATION, 1, 3));
-            }
-        }
+
     }
 }
