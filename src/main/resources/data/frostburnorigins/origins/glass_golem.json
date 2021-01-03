@@ -1,5 +1,8 @@
 {
-    "powers": [],
+    "powers": [
+        "frostburnorigins:golem",
+        "frostburnorigins:golem_damage_immunities"
+    ],
     "icon": "minecraft:glass",
     "impact": 1,
     "order": 1

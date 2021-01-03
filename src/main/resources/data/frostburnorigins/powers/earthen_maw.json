@@ -1,9 +1,9 @@
 {
   "type": "frostburnorigins:jaws",
-  "cooldown": 600,
+  "cooldown": 200,
   "hud_render": {
     "bar_index": 4
   },
-  "sound": "minecraft:entity.parrot.fly",
+  "sound": "minecraft:entity.player.attack_strong",
   "speed": 2
 }

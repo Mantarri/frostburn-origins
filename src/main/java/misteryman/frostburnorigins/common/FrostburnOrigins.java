@@ -3,6 +3,7 @@ package misteryman.frostburnorigins.common;
 import io.github.apace100.origins.Origins;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.Toml4jConfigSerializer;
+import misteryman.frostburnorigins.common.registry.FBEntityActions;
 import misteryman.frostburnorigins.common.registry.FBPowers;
 import misteryman.frostburnorigins.config.ModConfig;
 import misteryman.frostburnorigins.entity.BlazeKingEntity;
@@ -46,5 +47,7 @@ public class FrostburnOrigins implements ModInitializer {
         ModTags.register();
 
         FBPowers.init();
+
+        FBEntityActions.register();
     }
 }

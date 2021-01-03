@@ -1,6 +1,9 @@
 {
     "powers": [
-        "frostburnorigins:wrought_iron"
+        "frostburnorigins:wrought_iron",
+        "frostburnorigins:golem",
+        "frostburnorigins:golem_damage_immunities",
+        "origins:extra_reach"
     ],
     "unchoosable": false,
     "icon": "minecraft:iron_block",

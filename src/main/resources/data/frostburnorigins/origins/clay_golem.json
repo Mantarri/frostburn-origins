@@ -1,6 +1,8 @@
 {
     "powers": [
-        "frostburnorigins:crackable"
+        "frostburnorigins:crackable",
+        "frostburnorigins:golem",
+        "frostburnorigins:golem_damage_immunities"
     ],
     "icon": "minecraft:clay_ball",
     "order": 1,

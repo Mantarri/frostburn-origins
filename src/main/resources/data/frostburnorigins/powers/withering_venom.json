@@ -1,3 +1,18 @@
 {
-  "type": "origins:simple"
+  "type": "origins:target_action_on_hit",
+  "condition": {
+    "type": "origins:resource",
+    "resource": "frostburnorigins:withering_venom_resource",
+    "compare_to": 0,
+    "comparison": ">="
+  },
+  "entity_action": {
+    "type": "origins:apply_effect",
+    "effect": {
+      "effect": "minecraft:wither",
+      "duration": 60,
+      "amplifier": 1
+    }
+  },
+  "cooldown": 1
 }

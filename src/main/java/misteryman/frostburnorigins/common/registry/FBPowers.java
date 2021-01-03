@@ -28,6 +28,7 @@ public class FBPowers {
     public static final PowerType<Power> BLAZEBORN;
     public static final PowerType<Power> FLAMING_BODY;
     public static final PowerType<CooldownPower> PHOENIX;
+    public static final PowerType<CooldownPower> CHEMICAL_BURN;
 
     public static final PowerType<Power> WITHERING_VENOM;
 
@@ -37,16 +38,18 @@ public class FBPowers {
 
     public static final PowerType<Power> AXE_CRAZY;
     public static final PowerType<Power> CROSSBOW_MASTER;
+    public static final PowerType<Power> PRIOR_KNOWLEDGE;
     public static final PowerType<Power> BRETHREN;
 
     public static final PowerType<Power> CRACKABLE;
 
-    //public static final PowerType<CooldownPower> EARTHEN_MAW;
+    public static final PowerType<VariableIntPower> ENDLESS_QUIVER;
 
     static {
         BLAZEBORN = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "blazeborn"));
         FLAMING_BODY = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "flaming_body"));
         PHOENIX = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "phoenix"));
+        CHEMICAL_BURN = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "chemical_burn"));
 
         WITHERING_VENOM = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "wither_venom"));
 
@@ -56,9 +59,12 @@ public class FBPowers {
 
         AXE_CRAZY = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "axe_crazy"));
         CROSSBOW_MASTER = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "crossbow_master"));
+        PRIOR_KNOWLEDGE = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "prior_knowledge"));
         BRETHREN = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "brethren"));
 
         CRACKABLE = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "crackable"));
+
+        ENDLESS_QUIVER = new PowerTypeReference<>(new Identifier(FrostburnOrigins.MODID, "endless_quiver"));
 
 
 

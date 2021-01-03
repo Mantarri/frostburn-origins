@@ -1,0 +1,10 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "frostburnorigins:change_held_item"
+  },
+  "cooldown": 1,
+  "hud_render": {
+    "should_render": false
+  }
+}

@@ -70,11 +70,15 @@
   "power.frostburnorigins.endless_quiver.description": "You store a quiver that has an endless amount of arrows.",
 
   "power.frostburnorigins.frostbite.name": "Frostbite",
-  "power.frostburnorigins.frostbite.description": "Attacking an entity deals Slowness for 4 seconds.",
+  "power.frostburnorigins.frostbite.description": "Deal Frostbite I with any attack.",
   "power.frostburnorigins.hypothermicbite.name": "Hypothermicbite",
-  "power.frostburnorigins.hypothermicbite.description": "Attacking an entity deals Slowness II for 8 seconds.",
+  "power.frostburnorigins.hypothermicbite.description": "Deal Frostbite II with any attack.",
+  "power.frostburnorigins.frozen_quiver.name": "Frozen Quiver",
+  "power.frostburnorigins.frozen_quiver.description": "Any arrows fired deal Frostbite II.",
   "power.frostburnorigins.frozen_heart.name": "Frozen Heart",
   "power.frostburnorigins.frozen_heart.description": "Members of the Frost Faction are neutral towards you.",
+  "power.frostburnorigins.icy_snowball.name": "Icy Snowball",
+  "power.frostburnorigins.icy_snowball.description": "Throw a snowball dealing 6HP of damage, and Frostbite I.",
 
   "power.frostburnorigins.withered_stomach.name": "Withered Stomach",
   "power.frostburnorigins.withered_stomach.description": "You get more value from rotting food, and are immune to hunger, wither, and poison effects.",
@@ -87,11 +91,18 @@
   "power.frostburnorigins.axe_crazy.description": "Deal 2x damage with an axe.",
   "power.frostburnorigins.crossbow_master.name": "Crossbow Master",
   "power.frostburnorigins.crossbow_master.description": "Deal 2x damage with a crossbow.",
-  "power.frostburnorigins.fang_caller.name": "Fang Caller",
-  "power.frostburnorigins.fang_caller.description": "Summon fangs",
+  "power.frostburnorigins.prior_knowledge.name": "Prior Knowledge",
+  "power.frostburnorigins.prior_knowledge.description": "Deal 2x damage crossbows, and axes.",
+  "power.frostburnorigins.earthen_maw.name": "Earthen Maw",
+  "power.frostburnorigins.earthen_maw.description": "Create gaping fangs from the earth.",
 
+  "power.frostburnorigins.snow_golem.name": "Frozen Golem",
+  "power.frostburnorigins.snow_golem.description": "You cannot drown, be poisoned, or freeze.",
+  "power.frostburnorigins.golem.name": "Golem",
+  "power.frostburnorigins.golem.description": "You cannot drown, be poisoned, freeze, or feel the effects of heat.",
   "power.frostburnorigins.wrought_iron.name": "Wrought Iron",
   "power.frostburnorigins.wrought_iron.description": "Your body is hard as iron, giving you 5 extra hearts.",
   "power.frostburnorigins.crackable.name": "Crackable",
   "power.frostburnorigins.crackable.description": "Take double damage from pickaxes."
+
 }

@@ -1,8 +1,8 @@
 {
   "type": "frostburnorigins:entity_shield",
-  "cooldown": 600,
+  "cooldown": 40,
   "hud_render": {
-    "bar_index": 4
+    "bar_index": 2
   },
   "sound": "minecraft:entity.parrot.fly",
   "speed": 2

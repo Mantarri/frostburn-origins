@@ -1,5 +1,7 @@
 {
     "powers": [
+        "frostburnorigins:golem",
+        "frostburnorigins:golem_damage_immunities",
         "origins:phasing",
         "origins:invisibility"
     ],

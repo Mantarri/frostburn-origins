@@ -1,0 +1,8 @@
+{
+  "type": "origins:fire_projectile",
+  "entity_type": "minecraft:snowball",
+  "sound": "minecraft:entity.snowball.throw",
+  "hud_render": {
+    "bar_index": 1
+  }
+}

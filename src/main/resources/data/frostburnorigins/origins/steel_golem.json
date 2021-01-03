@@ -1,5 +1,8 @@
 {
-    "powers": [],
+    "powers": [
+        "frostburnorigins:golem",
+        "frostburnorigins:golem_damage_immunities"
+    ],
     "unchoosable": false,
     "icon": "minecraft:iron_ingot",
     "order": 1,

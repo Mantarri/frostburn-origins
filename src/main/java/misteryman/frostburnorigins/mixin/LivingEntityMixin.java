@@ -43,7 +43,7 @@ public abstract class LivingEntityMixin extends Entity {
             }
         }
 
-        if(FBPowers.AXE_CRAZY.isActive(attacker)) {
+        if(FBPowers.AXE_CRAZY.isActive(attacker) || FBPowers.PRIOR_KNOWLEDGE.isActive(attacker)) {
             if(attacker instanceof ServerPlayerEntity) {
                 ItemStack mainHandItemStack = ((ServerPlayerEntity) (Object) attacker).getMainHandStack();
                 Item mainHandItem = mainHandItemStack.getItem();
@@ -53,7 +53,7 @@ public abstract class LivingEntityMixin extends Entity {
             }
         }
 
-        if(FBPowers.CROSSBOW_MASTER.isActive(attacker)) {
+        if(FBPowers.CROSSBOW_MASTER.isActive(attacker) || FBPowers.PRIOR_KNOWLEDGE.isActive(attacker)) {
             Entity projectile = damageSource.getSource();
             if(projectile instanceof ProjectileEntity) {
                 return amount * 2;

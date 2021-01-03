@@ -1,0 +1,10 @@
+{
+  "powers": [
+    "origins:fire_immunity",
+    "frostburnorigins:blazeborn",
+    "frostburnorigins:flaming_body"
+  ],
+  "icon": "minecraft:blaze_powder",
+  "order": 0,
+  "impact": 1
+}

@@ -1,5 +1,7 @@
 {
     "powers": [
+        "frostburnorigins:snow_golem",
+        "frostburnorigins:snow_golem_damage_immunities",
         "frostburnorigins:thermophobic",
         "frostburnorigins:frostbite",
         "frostburnorigins:frozen_heart"

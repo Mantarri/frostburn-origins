@@ -1,7 +1,11 @@
 {
     "powers": [
         "frostburnorigins:thermophobic",
-        "frostburnorigins:withered_stomach"
+        "frostburnorigins:withered_stomach",
+        "frostburnorigins:withered_stomach_dummy",
+        "frostburnorigins:withering_venom",
+        "frostburnorigins:withering_venom_resource",
+        "frostburnorigins:withering_venom_reduction"
     ],
     "icon": "minecraft:rotten_flesh",
     "order": 1,
