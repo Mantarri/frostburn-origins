@@ -1,0 +1,11 @@
+{
+  "powers": [
+    "frostburnorigins:thermophobic",
+    "frostburnorigins:frozen_heart",
+    "frostburnorigins:freeze_frame",
+    "frostburnorigins:freeze_frame_toggle"
+  ],
+  "icon": "minecraft:ice",
+  "order": 1,
+  "impact": 1
+}

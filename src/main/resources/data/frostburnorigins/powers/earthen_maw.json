@@ -4,6 +4,5 @@
   "hud_render": {
     "bar_index": 4
   },
-  "sound": "minecraft:entity.player.attack_strong",
   "speed": 2
 }

@@ -1,0 +1,17 @@
+{
+  "type": "origins:attribute",
+  "modifiers": [
+    {
+      "name": "Lengthy Limbs extra block reach",
+      "attribute": "reach-entity-attributes:reach",
+      "value": 1.5,
+      "operation": "addition"
+    },
+    {
+      "name": "Lengthy Limbs entity reach",
+      "attribute": "reach-entity-attributes:attack_range",
+      "value": 1.5,
+      "operation": "addition"
+    }
+  ]
+}

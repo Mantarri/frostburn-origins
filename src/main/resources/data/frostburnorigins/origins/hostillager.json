@@ -1,0 +1,10 @@
+{
+  "powers": [
+    "frostburnorigins:thermophobic",
+    "frostburnorigins:brethren",
+    "frostburnorigins:armed"
+  ],
+  "icon": "minecraft:bow",
+  "order": 1,
+  "impact": 1
+}

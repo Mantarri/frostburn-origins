@@ -1,6 +1,7 @@
 package misteryman.frostburnorigins.client.render;
 
 import misteryman.frostburnorigins.client.models.BlazeLimbEntityModel;
+import misteryman.frostburnorigins.common.FrostburnOrigins;
 import misteryman.frostburnorigins.entity.BlazeLimbEntity;
 import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.MobEntityRenderer;
@@ -13,6 +14,6 @@ public class BlazeLimbEntityRenderer extends MobEntityRenderer<BlazeLimbEntity, 
 
     @Override
     public Identifier getTexture(BlazeLimbEntity entity) {
-        return(new Identifier("frostburnorigins", "textures/blaze_limb.png"));
+        return(FrostburnOrigins.id("textures/blaze_limb.png"));
     }
 }

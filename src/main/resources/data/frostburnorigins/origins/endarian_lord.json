@@ -1,9 +1,17 @@
 {
     "powers": [
-        "frostburnorigins:thermophobic"
+        "origins:pumpkin_hate",
+        "origins:water_vulnerability",
+        "frostburnorigins:thermophobic",
+        "frostburnorigins:ender_skin",
+        "frostburnorigins:teleport",
+        "frostburnorigins:earthen_maw_secondary",
+        "frostburnorigins:ender_block",
+        "frostburnorigins:sleek",
+        "frostburnorigins:lengthy_limbs"
     ],
     "unchoosable": false,
-    "icon": "minecraft:ender_eye",
+    "icon": "minecraft:ender_pearl",
     "order": 1,
     "impact": 1
 }

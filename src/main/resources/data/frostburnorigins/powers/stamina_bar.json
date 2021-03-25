@@ -1,0 +1,138 @@
+{
+  "type": "origins:multiple",
+  "combat_timer": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 5,
+    "hud_render": {
+      "bar_index": 3
+    },
+    "hidden": true
+  },
+  "combat_timer_decrease": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "frostburnorigins:stamina_bar_combat_timer",
+      "change": -1
+    },
+    "interval": 20,
+    "hidden": true
+  },
+  "increase_combat_timer_on_attack": {
+    "type": "origins:self_action_on_hit",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "frostburnorigins:stamina_bar_combat_timer",
+      "change": 5
+    },
+    "cooldown": 10,
+    "hidden": true
+  },
+  "increase_combat_timer_on_attacked": {
+    "type": "origins:self_action_when_hit",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "frostburnorigins:stamina_bar_combat_timer",
+      "change": 5
+    },
+    "cooldown": 10,
+    "hidden": true
+  },
+
+  "fill_hunger": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:feed",
+      "food": 4,
+      "saturation": 10
+    },
+    "interval": 40,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "frostburnorigins:stamina_bar_resource",
+      "comparison": ">=",
+      "compare_to": 6
+    },
+    "hidden": true
+  },
+  "fill_hunger_cost": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "frostburnorigins:stamina_bar_resource",
+      "change": -2
+    },
+    "interval": 40,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "frostburnorigins:stamina_bar_resource",
+      "comparison": ">=",
+      "compare_to": 8
+    },
+    "hidden": true
+  },
+  "fill_stamina": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "frostburnorigins:stamina_bar_resource",
+      "change": 1
+    },
+    "interval": 40,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "frostburnorigins:stamina_bar_combat_timer",
+          "comparison": "<",
+          "compare_to": 1
+        },
+        {
+          "type": "origins:sprinting",
+          "inverted": true
+        }
+      ]
+    },
+    "hidden": true
+  },
+  "no_nutrition_from_eating": {
+    "type": "origins:modify_food",
+    "food_modifier": {
+      "operation": "multiply_total",
+      "value": -1,
+      "name": "Eating does not restore hunger shanks."
+    },
+    "saturation_modifier": {
+      "operation": "multiply_total",
+      "value": -1,
+      "name": "Eating does not restore saturation."
+    },
+    "hidden": true
+  },
+
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 8,
+    "start_value": 8,
+    "hud_render": {
+      "bar_index": 3
+    }
+  },
+
+  "sprinting_cost": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "frostburnorigins:stamina_bar_resource",
+      "change": -1
+    },
+    "interval": 40,
+    "condition": {
+      "type": "origins:sprinting"
+    },
+    "hidden": true
+  }
+}

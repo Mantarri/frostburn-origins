@@ -14,7 +14,10 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ArrowEntity;
+import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
+import net.minecraft.item.ArrowItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -49,21 +52,20 @@ public abstract class PlayerEntityMixin {
 
     @Inject(at = @At(value = "FIELD", target = "Lnet/minecraft/entity/player/PlayerEntity;abilities:Lnet/minecraft/entity/player/PlayerAbilities;"), method = "getArrowType", cancellable = true)
     private void modifyGetArrowType(ItemStack weapon, CallbackInfoReturnable<ItemStack> cir) {
-
-        if(FBPowers.FROZEN_QUIVER.isActive(((ServerPlayerEntity) (Object) this))) {
-            if(FBPowers.ENDLESS_QUIVER.isActive(((ServerPlayerEntity) (Object) this))){
+        if(FBPowers.ENDLESS_QUIVER.isActive(((ServerPlayerEntity) (Object) this))){
+            if(FBPowers.FROZEN_QUIVER.isActive(((ServerPlayerEntity) (Object) this))) {
+                ItemStack tippedArrow = new ItemStack(Items.TIPPED_ARROW);
+                Potion slownessPotion = new Potion(new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 8, 1));
+                StatusEffectInstance slowness = new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 8, 1);
+                List<StatusEffectInstance> effects = new ArrayList<StatusEffectInstance>();
+                effects.add(slowness);
+                PotionUtil.setPotion(tippedArrow, slownessPotion);
+                PotionUtil.setCustomPotionEffects(tippedArrow, effects);
+                tippedArrow.getOrCreateTag().putInt("CustomPotionColor", slowness.getEffectType().getColor());
+                cir.setReturnValue(tippedArrow);
+            }else{
+                cir.setReturnValue(new ItemStack(Items.ARROW));
             }
-            /*
-            ItemStack tippedArrow = new ItemStack(Items.TIPPED_ARROW);
-            Potion slownessPotion = new Potion(new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 8, 1));
-            StatusEffectInstance slowness = new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 8, 1);
-            List<StatusEffectInstance> effects = new ArrayList<StatusEffectInstance>();
-            effects.add(slowness);
-            PotionUtil.setPotion(tippedArrow, slownessPotion);
-            PotionUtil.setCustomPotionEffects(tippedArrow, effects);
-            tippedArrow.getOrCreateTag().putInt("CustomPotionColor", slowness.getEffectType().getColor());
-            cir.setReturnValue(tippedArrow);
-             */
         }
     }
 }

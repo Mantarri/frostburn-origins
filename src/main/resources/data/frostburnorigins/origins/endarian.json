@@ -1,7 +1,13 @@
 {
     "powers": [
+        "origins:pumpkin_hate",
+        "origins:water_vulnerability",
         "frostburnorigins:thermophobic",
-        "origins:pumpkin_hate"
+        "frostburnorigins:ender_skin",
+        "frostburnorigins:teleport",
+        "frostburnorigins:ender_block",
+        "frostburnorigins:sleek",
+        "frostburnorigins:lengthy_limbs"
     ],
     "unchoosable": false,
     "icon": "minecraft:ender_pearl",

@@ -1,7 +1,9 @@
 {
     "powers": [
         "frostburnorigins:golem",
-        "frostburnorigins:golem_damage_immunities"
+        "frostburnorigins:stamina_bar",
+        "frostburnorigins:nerves_of_steel",
+        "frostburnorigins:lengthy_limbs"
     ],
     "unchoosable": false,
     "icon": "minecraft:iron_ingot",

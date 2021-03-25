@@ -2,7 +2,8 @@
     "powers": [
         "frostburnorigins:thermophobic",
         "frostburnorigins:frostbite",
-        "frostburnorigins:frozen_heart"
+        "frostburnorigins:frozen_heart",
+        "frostburnorigins:snowfall"
     ],
     "unchooseable": false,
     "icon": "minecraft:sunflower",

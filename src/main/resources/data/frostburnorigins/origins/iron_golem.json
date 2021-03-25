@@ -2,8 +2,9 @@
     "powers": [
         "frostburnorigins:wrought_iron",
         "frostburnorigins:golem",
-        "frostburnorigins:golem_damage_immunities",
-        "origins:extra_reach"
+        "frostburnorigins:stamina_bar",
+        "frostburnorigins:lengthy_limbs",
+        "frostburnorigins:forge"
     ],
     "unchoosable": false,
     "icon": "minecraft:iron_block",

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:barter",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 60,
+          "name": "minecraft:porkchop"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 85,
+          "name": "minecraft:mushroom_stew"
+        }
+      ]
+    }
+  ]
+}

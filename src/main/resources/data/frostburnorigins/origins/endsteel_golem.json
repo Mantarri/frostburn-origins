@@ -1,0 +1,14 @@
+{
+  "powers": [
+    "frostburnorigins:golem",
+    "frostburnorigins:stamina_bar",
+    "frostburnorigins:nerves_of_steel",
+    "frostburnorigins:lengthy_limbs",
+    "frostburnorigins:anti_void",
+    "frostburnorigins:the_sky_may_fall"
+  ],
+  "unchoosable": false,
+  "icon": "minecraft:end_stone",
+  "order": 1,
+  "impact": 1
+}

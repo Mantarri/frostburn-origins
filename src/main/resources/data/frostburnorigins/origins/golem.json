@@ -1,0 +1,9 @@
+{
+  "powers": [
+    "frostburnorigins:golem",
+    "frostburnorigins:stamina_bar"
+  ],
+  "icon": "minecraft:stone",
+  "order": 1,
+  "impact": 1
+}

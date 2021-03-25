@@ -1,8 +1,38 @@
 {
-  "type": "origins:effect_immunity",
-  "effects": [
-    "minecraft:poison",
-    "minecraft:hunger",
-    "minecraft:slowness"
-  ]
+  "type": "origins:multiple",
+  "effect_immunities": {
+    "type": "origins:effect_immunity",
+    "effects": [
+      "minecraft:poison",
+      "minecraft:hunger",
+      "minecraft:slowness"
+    ]
+  },
+  "damage_type_immunities": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "starve"
+        },
+        {
+          "type": "origins:name",
+          "name": "drown"
+        },
+        {
+          "type": "origins:name",
+          "name": "inWall"
+        },
+        {
+          "type": "origins:name",
+          "name": "fallingBlock"
+        },
+        {
+          "type": "origins:fire"
+        }
+      ]
+    }
+  }
 }

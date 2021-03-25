@@ -1,6 +1,10 @@
 {
     "powers": [
-        "frostburnorigins:thermophobic"
+        "frostburnorigins:thermophobic",
+        "frostburnorigins:fools_bold",
+        "frostburnorigins:food_bartering",
+        "frostburnorigins:mighty_axe",
+        "frostburnorigins:fools_bold"
     ],
     "unchooseable": false,
     "icon": "minecraft:golden_axe",

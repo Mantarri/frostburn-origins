@@ -1,0 +1,21 @@
+{
+  "type": "origins:multiple",
+  "damage": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "name": "Lower melee damage.",
+      "value": -0.5,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "generic"
+    }
+  },
+  "projectiles": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:projectile"
+    }
+  }
+}

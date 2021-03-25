@@ -1,9 +1,10 @@
 {
     "powers": [
         "frostburnorigins:snow_golem",
-        "frostburnorigins:snow_golem_damage_immunities",
+        "frostburnorigins:stamina_bar",
         "frostburnorigins:thermophobic",
         "frostburnorigins:frostbite",
+        "frostburnorigins:icy_snowball",
         "frostburnorigins:frozen_heart"
     ],
     "icon": "minecraft:snowball",

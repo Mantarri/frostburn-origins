@@ -1,0 +1,22 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:if_else",
+    "condition": {
+      "type": "origins:power_active",
+      "power": "frostburnorigins:freeze_frame_toggle"
+    },
+    "if_action": {
+      "type": "frostburnorigins:freeze_frame_clear"
+    },
+    "else_action": {
+      "type": "frostburnorigins:freeze_frame_freeze"
+    }
+
+  },
+  "cooldown": 10,
+  "hud_render": {
+    "should_render": true
+  },
+  "hidden": true
+}

@@ -2,7 +2,7 @@
     "powers": [
         "frostburnorigins:crackable",
         "frostburnorigins:golem",
-        "frostburnorigins:golem_damage_immunities"
+        "frostburnorigins:stamina_bar"
     ],
     "icon": "minecraft:clay_ball",
     "order": 1,

@@ -1,0 +1,12 @@
+{
+    "powers": [
+        "frostburnorigins:thermophobic",
+        "frostburnorigins:fools_bold",
+        "frostburnorigins:food_bartering",
+        "frostburnorigins:markshog"
+    ],
+    "unchooseable": false,
+    "icon": "minecraft:crossbow",
+    "order": 0,
+    "impact": 1
+}

@@ -1,7 +1,8 @@
 {
   "type": "origins:fire_projectile",
-  "entity_type": "minecraft:snowball",
+  "entity_type": "frostburnorigins:iceball",
   "sound": "minecraft:entity.snowball.throw",
+  "cooldown": 40,
   "hud_render": {
     "bar_index": 1
   }

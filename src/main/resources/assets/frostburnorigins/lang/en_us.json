@@ -1,8 +1,14 @@
 {
+  "item.minecraft.potion.effect.frostbite": "Potion of Frostbite",
+  "item.minecraft.splash_potion.effect.frostbite": "Splash Potion of Frostbite",
+  "item.minecraft.lingering_potion.effect.frostbite": "Lingering Potion of Frostbite",
+
   "origin.frostburnorigins.blazeling.name": "Blazeling",
   "origin.frostburnorigins.blazeling.description": "The lesser form. Though it lacks the flight of its elders, it still blazes with the fire of the Nether.",
   "origin.frostburnorigins.phoenix.name": "Phoenix Blaze",
   "origin.frostburnorigins.phoenix.description": "A blaze that has gained incredible ariel maneuverability, able to avoid death on occasion...",
+  "origin.frostburnorigins.pyrochemist.name": "Pyrochemist",
+  "origin.frostburnorigins.pyrochemist.description": "Having trained its fire-bending to an incredible level, this Blazing mob can use its internal fire to power up potion effects, and burn away harmful effects.",
   "origin.frostburnorigins.blazing_king.name": "Blazing King",
   "origin.frostburnorigins.blazing_king.description": "Having defeated a previous King in a duel, this former Inferno has earned the title of \"Nether King\".",
 
@@ -68,6 +74,8 @@
   "power.frostburnorigins.thermophobic.description": "You cannot consume hot food, such as magma cream, or blaze rods.",
   "power.frostburnorigins.endless_quiver.name": "Endless Quiver",
   "power.frostburnorigins.endless_quiver.description": "You store a quiver that has an endless amount of arrows.",
+  "power.frostburnorigins.sleek.name": "Sleek",
+  "power.frostburnorigins.sleek.description": "Your thin body prevents you from wearing chestplates, and leggings.",
 
   "power.frostburnorigins.frostbite.name": "Frostbite",
   "power.frostburnorigins.frostbite.description": "Deal Frostbite I with any attack.",
@@ -95,6 +103,8 @@
   "power.frostburnorigins.prior_knowledge.description": "Deal 2x damage crossbows, and axes.",
   "power.frostburnorigins.earthen_maw.name": "Earthen Maw",
   "power.frostburnorigins.earthen_maw.description": "Create gaping fangs from the earth.",
+  "power.frostburnorigins.ender_block_damage.name": "Ender Block",
+  "power.frostburnorigins.ender_block_damage.description": "You take 50% less damage from melee attacks, and are immune to projectiles.",
 
   "power.frostburnorigins.snow_golem.name": "Frozen Golem",
   "power.frostburnorigins.snow_golem.description": "You cannot drown, be poisoned, or freeze.",
@@ -103,6 +113,7 @@
   "power.frostburnorigins.wrought_iron.name": "Wrought Iron",
   "power.frostburnorigins.wrought_iron.description": "Your body is hard as iron, giving you 5 extra hearts.",
   "power.frostburnorigins.crackable.name": "Crackable",
-  "power.frostburnorigins.crackable.description": "Take double damage from pickaxes."
+  "power.frostburnorigins.crackable.description": "Take double damage from pickaxes.",
 
+  "effect.frostburnorigins.frostbite": "Frostbite"
 }

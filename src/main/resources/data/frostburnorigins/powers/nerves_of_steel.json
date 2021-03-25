@@ -1,0 +1,9 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Nerves of Steel health increase",
+    "attribute": "minecraft:generic.max_health",
+    "value": 30.0,
+    "operation": "addition"
+  }
+}

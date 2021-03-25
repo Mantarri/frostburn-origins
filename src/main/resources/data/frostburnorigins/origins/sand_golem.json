@@ -1,9 +1,10 @@
 {
     "powers": [
-        "frostburnorigins:golem",
-        "frostburnorigins:golem_damage_immunities",
         "origins:phasing",
-        "origins:invisibility"
+        "origins:invisibility",
+        "frostburnorigins:golem",
+        "frostburnorigins:stamina_bar",
+        "frostburnorigins:hourglass"
     ],
     "unchoosable": false,
     "icon": "minecraft:sand",

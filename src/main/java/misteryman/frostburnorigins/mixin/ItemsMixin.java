@@ -1,10 +1,9 @@
 package misteryman.frostburnorigins.mixin;
 
-import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
-import me.sargunvohra.mcmods.autoconfig1u.serializer.Toml4jConfigSerializer;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import misteryman.frostburnorigins.common.ConfigFoodItem;
 import misteryman.frostburnorigins.common.FrostburnOrigins;
-import misteryman.frostburnorigins.common.ModTags;
 import misteryman.frostburnorigins.config.ModConfig;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
@@ -13,7 +12,6 @@ import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Items.class)

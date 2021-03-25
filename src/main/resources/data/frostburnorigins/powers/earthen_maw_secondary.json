@@ -1,0 +1,12 @@
+{
+  "type": "frostburnorigins:jaws",
+  "cooldown": 200,
+  "hud_render": {
+    "bar_index": 4
+  },
+  "speed": 2,
+  "key": {
+    "key": "key.origins.secondary_active",
+    "continuous": false
+  }
+}

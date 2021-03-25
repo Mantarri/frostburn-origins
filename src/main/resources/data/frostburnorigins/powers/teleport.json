@@ -1,0 +1,8 @@
+{
+  "type": "frostburnorigins:teleport",
+  "cooldown": 40,
+  "hud_render": {
+    "bar_index": 4
+  },
+  "sound": "minecraft:entity.enderman.teleport"
+}

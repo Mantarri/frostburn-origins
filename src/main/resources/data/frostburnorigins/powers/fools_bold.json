@@ -1,0 +1,14 @@
+{
+  "type": "origins:modify_damage_dealt",
+  "modifier": {
+    "name": "Deal 2x damage with gold tools",
+    "value": 2,
+    "operation": "addition"
+  },
+  "item_condition": {
+    "type": "origins:ingredient",
+    "ingredient": {
+      "tag": "frostburnorigins:gold_tools"
+    }
+  }
+}

@@ -1,7 +1,10 @@
 {
     "powers": [
+        "origins:fire_immunity",
         "frostburnorigins:thermophobic",
-        "frostburnorigins:withered_stomach"
+        "frostburnorigins:withered_stomach",
+        "frostburnorigins:sword_swine",
+        "frostburnorigins:fools_bold"
     ],
     "unchooseable": false,
     "icon": "minecraft:gold_nugget",

@@ -2,7 +2,8 @@
   "powers": [
     "origins:fire_immunity",
     "frostburnorigins:blazeborn",
-    "frostburnorigins:flaming_body"
+    "frostburnorigins:flaming_body",
+    "frostburnorigins:rocket_boost"
   ],
   "icon": "minecraft:blaze_powder",
   "order": 0,

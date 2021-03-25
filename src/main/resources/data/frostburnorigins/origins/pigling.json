@@ -1,7 +1,9 @@
 {
     "powers": [
+        "origins:nether_spawn",
         "frostburnorigins:thermophobic",
-        "origins:nether_spawn"
+        "frostburnorigins:fools_bold",
+        "frostburnorigins:food_bartering"
     ],
     "icon": "minecraft:golden_sword",
     "order": 2,

@@ -1,0 +1,44 @@
+{
+  "type": "origins:multiple",
+  "damage_dealt": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "name": "Double damage dealt.",
+      "value": 2.0,
+      "operation": "multiply_total"
+    }
+  },
+  "damage_taken": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "name": "Take x1.25 fall damage.",
+      "value": 1.25,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fall"
+    }
+  },
+  "fall_damage": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "name": "Double damage taken.",
+      "value": 2.0,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "mob"
+        },
+        {
+          "type": "origins:name",
+          "name": "player"
+        }
+      ]
+    }
+  }
+}
