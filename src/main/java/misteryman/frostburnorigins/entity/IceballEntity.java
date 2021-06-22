@@ -5,14 +5,11 @@ import misteryman.frostburnorigins.common.FrostburnOrigins;
 import misteryman.frostburnorigins.common.registry.FBStatusEffects;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.impl.networking.ServerSidePacketRegistryImpl;
+import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.thrown.ThrownEntity;
-import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.Identifier;
@@ -43,10 +40,12 @@ public class IceballEntity extends ThrownEntity {
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
         Entity entity = entityHitResult.getEntity();
-        FrostburnOrigins.LOGGER.warn("Entity");
         if(entity instanceof LivingEntity) {
-            FrostburnOrigins.LOGGER.warn("Living Entity");
-            ((LivingEntity) (Object) entity).applyStatusEffect(FBStatusEffects.FROSTBITE_INSTANCE);
+            ((LivingEntity) entity).applyStatusEffect(
+                FBStatusEffects.newStatusEffectInstance(
+                    FBStatusEffects.FROSTBITE,
+                    600,
+                    0));
         }
     }
 
@@ -77,6 +76,6 @@ public class IceballEntity extends ThrownEntity {
         packet.writeInt(getEntityId());
         packet.writeUuid(getUuid());
 
-        return ServerSidePacketRegistryImpl.INSTANCE.toPacket(SPAWN_PACKET, packet);
+        return ServerSidePacketRegistry.INSTANCE.toPacket(SPAWN_PACKET, packet);
     }
 }

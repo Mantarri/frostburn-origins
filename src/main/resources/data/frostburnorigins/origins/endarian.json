@@ -7,7 +7,8 @@
         "frostburnorigins:teleport",
         "frostburnorigins:ender_block",
         "frostburnorigins:sleek",
-        "frostburnorigins:lengthy_limbs"
+        "frostburnorigins:lengthy_limbs",
+        "frostburnorigins:sharp_arms"
     ],
     "unchoosable": false,
     "icon": "minecraft:ender_pearl",

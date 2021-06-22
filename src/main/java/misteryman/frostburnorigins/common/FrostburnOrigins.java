@@ -1,10 +1,9 @@
 package misteryman.frostburnorigins.common;
 
-import io.github.apace100.origins.entity.EnderianPearlEntity;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import misteryman.frostburnorigins.common.registry.FBEntityActions;
-import misteryman.frostburnorigins.common.registry.FBItemTags;
+import misteryman.frostburnorigins.common.registry.FBTags;
 import misteryman.frostburnorigins.common.registry.FBPowers;
 import misteryman.frostburnorigins.common.registry.FBStatusEffects;
 import misteryman.frostburnorigins.config.ModConfig;
@@ -16,13 +15,11 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.fabricmc.fabric.api.tag.TagRegistry;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.tag.Tag;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
@@ -71,7 +68,7 @@ public class FrostburnOrigins implements ModInitializer {
 
         FBStatusEffects.init();
 
-        FBItemTags.init();
+        FBTags.init();
 
         FBPowers.init();
 

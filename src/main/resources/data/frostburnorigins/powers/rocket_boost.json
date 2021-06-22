@@ -8,7 +8,8 @@
         {
           "type": "origins:add_velocity",
           "y": 10,
-          "space": "world"
+          "space": "world",
+          "set": true
         },
         {
           "type": "origins:execute_command",

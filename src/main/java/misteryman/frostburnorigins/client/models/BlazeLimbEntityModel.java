@@ -1,6 +1,7 @@
 package misteryman.frostburnorigins.client.models;
 
 import misteryman.frostburnorigins.entity.BlazeLimbEntity;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
@@ -14,7 +15,7 @@ public class BlazeLimbEntityModel extends EntityModel<BlazeLimbEntity> {
         this.textureWidth = 16;
 
         base = new ModelPart(this, 0, 0);
-        base.addCuboid(-6, -6, -6, 12, 12, 12);
+        base.addCuboid(-8, 0, -1, 16, 24, 2);
     }
 
     @Override
@@ -25,6 +26,9 @@ public class BlazeLimbEntityModel extends EntityModel<BlazeLimbEntity> {
     @Override
     public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
         matrices.translate(0, 1.125, 0);
+        matrices.push();
+
+        matrices.pop();
 
         base.render(matrices, vertices, light, overlay);
     }

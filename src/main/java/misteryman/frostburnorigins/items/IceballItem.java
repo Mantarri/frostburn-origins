@@ -33,8 +33,8 @@ public class IceballItem extends Item {
             projectile.setPos(user.getX(), user.getY(), user.getZ());
             projectile.setOwner(user);
             projectile.setProperties(user, user.pitch, user.yaw, 0.0F, 1.5F, 0.25F);
-            if(world.spawnEntity(projectile)) {
-                FrostburnOrigins.LOGGER.warn("LET'S THROOOOW!!!");
+            if(!world.spawnEntity(projectile)) {
+                FrostburnOrigins.LOGGER.warn("Failed to spawn " + projectile.getEntityName() + "in world");
             }
         }
 

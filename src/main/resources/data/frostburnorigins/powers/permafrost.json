@@ -1,0 +1,15 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+	"type": "frostburnorigins:spawn_effect_cloud",
+	"potion": "frostburnorigins:frostbite",
+	"radius_start_size": -0.5,
+	"radius_end_size": 8,
+	"warm_up_time": 4.0,
+	"cloud_duration": 480
+  },
+  "cooldown": 1,
+  "hud_render": {
+	"should_render": true
+  }
+}

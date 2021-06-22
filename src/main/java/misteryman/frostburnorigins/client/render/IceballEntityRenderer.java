@@ -23,9 +23,6 @@ public class IceballEntityRenderer extends EntityRenderer<IceballEntity> {
 
     @Override
     public void render(IceballEntity entity, float yaw, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light) {
-        matrices.push();
-
-        matrices.multiply(Vector3f.POSITIVE_Y.getRadialQuaternion(entity.age));
         MinecraftClient.getInstance().getItemRenderer().renderItem(
                 STACK,
                 ModelTransformation.Mode.FIXED,
@@ -34,8 +31,6 @@ public class IceballEntityRenderer extends EntityRenderer<IceballEntity> {
                 matrices,
                 vertexConsumers
         );
-
-        matrices.pop();
 
         super.render(entity, yaw, tickDelta, matrices, vertexConsumers, light);
     }

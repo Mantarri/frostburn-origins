@@ -2,7 +2,7 @@ package misteryman.frostburnorigins.mixin;
 
 import misteryman.frostburnorigins.common.FrostburnOrigins;
 import misteryman.frostburnorigins.common.PlayerSpecificBartering;
-import misteryman.frostburnorigins.common.registry.FBItemTags;
+import misteryman.frostburnorigins.common.registry.FBTags;
 import misteryman.frostburnorigins.common.registry.FBPowers;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
@@ -19,7 +19,6 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -49,7 +48,7 @@ public abstract class PiglinBrainMixin {
         boolean bl2;
         boolean bl3;
 
-        bl3 = itemStack.getItem().isIn(FBItemTags.PIGLIN_FOOD_BARTERING_ITEMS);
+        bl3 = itemStack.getItem().isIn(FBTags.PIGLIN_FOOD_BARTERING_ITEMS);
 
         if (piglin.isAdult() && bl3) {
             bl2 = PiglinBrainInvoker.invokeAcceptsForBarter(itemStack.getItem());

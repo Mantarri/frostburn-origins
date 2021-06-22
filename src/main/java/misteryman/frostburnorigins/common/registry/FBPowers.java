@@ -8,18 +8,14 @@ import io.github.apace100.origins.util.SerializableData;
 import io.github.apace100.origins.util.SerializableDataType;
 import misteryman.frostburnorigins.common.FrostburnOrigins;
 import misteryman.frostburnorigins.power.FangCallerPower;
-import net.minecraft.entity.decoration.ItemFrameEntity;
 import net.minecraft.entity.mob.EvokerFangsEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.registry.Registry;
 
 public class FBPowers {
-    //public static final PowerType<Power> KINGS_SHIELD;
     public static final PowerType<Power> BLAZEBORN;
     public static final PowerType<Power> FLAMING_BODY;
     public static final PowerType<CooldownPower> PHOENIX;
@@ -86,97 +82,40 @@ public class FBPowers {
 
 
         register(new PowerFactory<>(FrostburnOrigins.id("jaws"),
-                new SerializableData()
-                        .add("cooldown", SerializableDataType.INT)
-                        .add("speed", SerializableDataType.FLOAT)
-                        .add("sound", SerializableDataType.SOUND_EVENT, null)
-                        .add("hud_render", SerializableDataType.HUD_RENDER)
-                        .add("key", SerializableDataType.KEY, new Active.Key()),
-                data -> {
-                    SoundEvent soundEvent = (SoundEvent)data.get("sound");
-                    return (type, player) -> {
-                        ActiveCooldownPower power = new ActiveCooldownPower(type, player,
-                                data.getInt("cooldown"),
-                                (HudRender)data.get("hud_render"),
-                                e -> {
-                                    if(!e.world.isClient && e instanceof PlayerEntity) {
-                                        PlayerEntity p = (PlayerEntity)e;
-                                        Vec3d pLookVec = new Vec3d(MathHelper.sin(-p.yaw * 0.017453292F), 1.0F, MathHelper.cos(-p.yaw * 0.017453292F));
-                                        Vec3d pPos = new Vec3d(p.getX(), p.getY(), p.getZ());
-                                        Vec3d fangPos;
-                                        float headYaw = p.headYaw * (1F / 57.295776F);
-                                        double y = pPos.y;
-
-                                        for(int i = 0, j = 2; i < 6; i++, j+= 2) {
-                                            fangPos = new Vec3d(pPos.x + (pLookVec.x * j), y, pPos.z + (pLookVec.z * j));
-                                            FangCallerPower fangCallerPower = new FangCallerPower();
-                                            y = fangCallerPower.getValidHeight(y, p, fangPos);
-                                            EvokerFangsEntity fangs = new EvokerFangsEntity(p.world, pPos.x + (pLookVec.x * j), y, pPos.z + (pLookVec.z * j), headYaw, 1, p);
-                                            p.world.spawnEntity(fangs);
-                                        }
-                                    }
-                                });
-                        power.setKey((Active.Key)data.get("key"));
-                        return power;
-                    };
-                }).allowCondition());
-
-        register(new PowerFactory<>(FrostburnOrigins.id("teleport"),
-                new SerializableData()
-                        .add("cooldown", SerializableDataType.INT)
-                        .add("sound", SerializableDataType.SOUND_EVENT, null)
-                        .add("hud_render", SerializableDataType.HUD_RENDER)
-                        .add("key", SerializableDataType.KEY, new Active.Key()),
-                data -> {
-                    SoundEvent soundEvent = (SoundEvent) data.get("sound");
-                    return (type, player) -> {
-                        ActiveCooldownPower power = new ActiveCooldownPower(type, player,
+            new SerializableData()
+                .add("cooldown", SerializableDataType.INT)
+                .add("speed", SerializableDataType.FLOAT)
+                .add("sound", SerializableDataType.SOUND_EVENT, null)
+                .add("hud_render", SerializableDataType.HUD_RENDER)
+                .add("key", SerializableDataType.KEY, new Active.Key()),
+            data -> {
+                SoundEvent soundEvent = (SoundEvent)data.get("sound");
+                return (type, player) -> {
+                    ActiveCooldownPower power = new ActiveCooldownPower(type, player,
                             data.getInt("cooldown"),
-                            (HudRender) data.get("hud_render"),
+                            (HudRender)data.get("hud_render"),
                             e -> {
-                                if (!e.world.isClient && e instanceof PlayerEntity) {
-                                    PlayerEntity p = (PlayerEntity) e;
+                                if(!e.world.isClient && e instanceof PlayerEntity) {
+                                    PlayerEntity p = (PlayerEntity)e;
                                     Vec3d pLookVec = new Vec3d(MathHelper.sin(-p.yaw * 0.017453292F), 1.0F, MathHelper.cos(-p.yaw * 0.017453292F));
                                     Vec3d pPos = new Vec3d(p.getX(), p.getY(), p.getZ());
                                     Vec3d fangPos;
                                     float headYaw = p.headYaw * (1F / 57.295776F);
                                     double y = pPos.y;
 
-                                    EvokerFangsEntity fangs = new EvokerFangsEntity(p.world, pPos.x + (pLookVec.x * 4), pPos.y - p.pitch, pPos.z + (pLookVec.z * 4), headYaw, 1, p);
-                                    System.out.println(p.pitch);
-                                    p.world.spawnEntity(fangs);
+                                    for(int i = 0, j = 2; i < 6; i++, j+= 2) {
+                                        fangPos = new Vec3d(pPos.x + (pLookVec.x * j), y, pPos.z + (pLookVec.z * j));
+                                        FangCallerPower fangCallerPower = new FangCallerPower();
+                                        y = fangCallerPower.getValidHeight(y, p, fangPos);
+                                        EvokerFangsEntity fangs = new EvokerFangsEntity(p.world, pPos.x + (pLookVec.x * j), y, pPos.z + (pLookVec.z * j), headYaw, 1, p);
+                                        p.world.spawnEntity(fangs);
+                                    }
                                 }
                             });
-                        power.setKey((Active.Key) data.get("key"));
-                        return power;
-                    };
-                }).allowCondition());
-
-        register(new PowerFactory<>(FrostburnOrigins.id("entity_shield"),
-                new SerializableData()
-                        .add("cooldown", SerializableDataType.INT)
-                        .add("speed", SerializableDataType.FLOAT)
-                        .add("sound", SerializableDataType.SOUND_EVENT, null)
-                        .add("hud_render", SerializableDataType.HUD_RENDER)
-                        .add("key", SerializableDataType.KEY, new Active.Key()),
-                data -> {
-                    SoundEvent soundEvent = (SoundEvent) data.get("sound");
-                    return (type, player) -> {
-                        ActiveCooldownPower power = new ActiveCooldownPower(type, player,
-                            data.getInt("cooldown"),
-                            (HudRender) data.get("hud_render"),
-                            e -> {
-                                if (!e.world.isClient && e instanceof PlayerEntity) {
-                                    PlayerEntity p = (PlayerEntity) e;
-                                    ItemFrameEntity itemFrame = new ItemFrameEntity(p.world, new BlockPos(p.getX(), p.getY(), p.getZ()), Direction.UP);
-                                    p.world.spawnEntity(itemFrame);
-                                }
-                            });
-                    power.setKey((Active.Key) data.get("key"));
+                    power.setKey((Active.Key)data.get("key"));
                     return power;
-                    };
-                }).allowCondition());
-
+                };
+            }).allowCondition());
     }
     private static void register(PowerFactory serializer) {
         Registry.register(ModRegistries.POWER_FACTORY, serializer.getSerializerId(), serializer);

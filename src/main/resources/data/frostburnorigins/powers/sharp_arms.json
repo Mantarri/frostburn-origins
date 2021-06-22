@@ -1,4 +1,12 @@
 {
   "type": "origins:modify_damage_dealt",
-  
+  "modifier": {
+    "name": "1.5x damage dealt.",
+    "value": 1.5,
+    "operation": "multiply_total"
+  },
+  "damage_condition": {
+    "type": "origins:name",
+    "name": "generic"
+  }
 }

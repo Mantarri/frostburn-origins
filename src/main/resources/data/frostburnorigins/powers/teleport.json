@@ -1,8 +1,12 @@
 {
-  "type": "frostburnorigins:teleport",
-  "cooldown": 40,
-  "hud_render": {
-    "bar_index": 4
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "frostburnorigins:teleport_toward_look",
+    "unsafe_blocks": "frostburnorigins:endarian_teleport_unsafe_blocks",
+    "range": 16.0
   },
-  "sound": "minecraft:entity.enderman.teleport"
+  "cooldown": 1,
+  "hud_render": {
+    "should_render": false
+  }
 }

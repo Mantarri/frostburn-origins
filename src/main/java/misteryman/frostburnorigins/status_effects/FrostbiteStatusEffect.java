@@ -22,14 +22,7 @@ import java.util.Set;
 public class FrostbiteStatusEffect extends StatusEffect {
     public FrostbiteStatusEffect() {
         super(StatusEffectType.HARMFUL, BackgroundHelper.ColorMixer.getArgb(255, 138, 235, 241));
-
-        entityAttributes.put(EntityAttributes.GENERIC_MOVEMENT_SPEED, new EntityAttributeModifier(
-                "7107DE5E-7CE8-4030-940E-514C1F160890",
-                -0.15000000596046448D,
-                EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
     }
-
-    public Multimap<EntityAttribute, EntityAttributeModifier> entityAttributes = HashMultimap.create();
 
     @Override
     public boolean canApplyUpdateEffect(int duration, int amplifier) {
@@ -43,12 +36,7 @@ public class FrostbiteStatusEffect extends StatusEffect {
 
     @Override
     public void onApplied(LivingEntity entity, AttributeContainer attributes, int amplifier) {
-        entity.damage(DamageSource.MAGIC, 1.0F + 1.0F * amplifier);
-        attributes.addTemporaryModifiers(entityAttributes);
-    }
-
-    @Override
-    public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {
-        attributes.removeModifiers(entityAttributes);
+        super.onApplied(entity, attributes, amplifier);
+        entity.damage(DamageSource.MAGIC, 1.0F + (1.0F * amplifier));
     }
 }

@@ -6,6 +6,7 @@ import io.github.apace100.origins.power.PowerTypeReference;
 import io.github.apace100.origins.power.VariableIntPower;
 import misteryman.frostburnorigins.common.FrostburnOrigins;
 import misteryman.frostburnorigins.common.registry.FBPowers;
+import misteryman.frostburnorigins.common.registry.FBStatusEffects;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
@@ -55,16 +56,13 @@ public abstract class PlayerEntityMixin {
         if(FBPowers.ENDLESS_QUIVER.isActive(((ServerPlayerEntity) (Object) this))){
             if(FBPowers.FROZEN_QUIVER.isActive(((ServerPlayerEntity) (Object) this))) {
                 ItemStack tippedArrow = new ItemStack(Items.TIPPED_ARROW);
-                Potion slownessPotion = new Potion(new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 8, 1));
-                StatusEffectInstance slowness = new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 8, 1);
+                Potion frostbitePotion = FBStatusEffects.FROSTBITE_POTION;
+                StatusEffectInstance frostbite = FBStatusEffects.newStatusEffectInstance(FBStatusEffects.FROSTBITE, 600, 1);
                 List<StatusEffectInstance> effects = new ArrayList<StatusEffectInstance>();
-                effects.add(slowness);
-                PotionUtil.setPotion(tippedArrow, slownessPotion);
+                effects.add(frostbite);
+                PotionUtil.setPotion(tippedArrow, frostbitePotion);
                 PotionUtil.setCustomPotionEffects(tippedArrow, effects);
-                tippedArrow.getOrCreateTag().putInt("CustomPotionColor", slowness.getEffectType().getColor());
                 cir.setReturnValue(tippedArrow);
-            }else{
-                cir.setReturnValue(new ItemStack(Items.ARROW));
             }
         }
     }

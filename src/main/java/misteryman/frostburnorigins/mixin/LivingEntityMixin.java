@@ -1,7 +1,7 @@
 package misteryman.frostburnorigins.mixin;
 
 import io.github.apace100.origins.power.CooldownPower;
-import misteryman.frostburnorigins.common.registry.FBItemTags;
+import misteryman.frostburnorigins.common.registry.FBTags;
 import misteryman.frostburnorigins.common.registry.FBPowers;
 import misteryman.frostburnorigins.common.registry.FBStatusEffects;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
@@ -43,7 +43,7 @@ public abstract class LivingEntityMixin extends Entity {
         if(FBPowers.FROSTBITE.isActive(attacker)) {
             Entity projectile = damageSource.getSource();
             if(projectile instanceof ProjectileEntity) {
-                ((LivingEntity) (Object) this).addStatusEffect(FBStatusEffects.FROSTBITE_INSTANCE);
+                ((LivingEntity) (Object) this).addStatusEffect(FBStatusEffects.newStatusEffectInstance(FBStatusEffects.FROSTBITE, 600, 1));
             }
         }
 
@@ -110,7 +110,7 @@ public abstract class LivingEntityMixin extends Entity {
         if(FBPowers.FOOLS_BOLD.isActive(this)) {
             int armorPieces = 0;
             for(ItemStack stack : getArmorItems()) {
-                if(FBItemTags.GOLD_ARMOR.contains(stack.getItem())) {
+                if(FBTags.GOLD_ARMOR.contains(stack.getItem())) {
                     armorPieces++;
                 }
             }
